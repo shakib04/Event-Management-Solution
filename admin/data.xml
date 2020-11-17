@@ -1,0 +1,12 @@
+<root>
+    <admin>
+        <fname>shakib</fname>
+        <username>s1</username>
+        <password>1</password>
+        <email>sds@gma.com</email>
+        <type>admin</type>
+        <gender>Male</gender>
+        <contact>0133543554</contact>
+        <location>Dhaka</location>
+    </admin>
+</root>

@@ -1,0 +1,4 @@
+1.boss is main person of admin.
+2. he can manage all the employee. he can see the stats, performance of the employee.
+3. he can manage all the users, planners. he the performance. how they use our system.
+4. all financial benenfit will report to boss. any critical issue will report to boss.

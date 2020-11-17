@@ -1,0 +1,18 @@
+
+1. admin dashboard (admin profit or financial page)
+2. approve event planner and users and vendor
+3. crud page for event planner and search option
+4. different crud page for user and search option, beac
+5. admin profile 
+6. statistics page (to justify my business progress)
+
+
+/* Admin Features */
+
+Admin:
+•	Can verify registered Event planner 
+•	Can verify registered User
+•	CRUD Event planner with search
+•	CRUD all User with search
+•	Can see event order list from individual Event planner with user info.
+•	Can see event avg and total profit from delivered event program.

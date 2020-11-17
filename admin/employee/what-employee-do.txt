@@ -1,0 +1,7 @@
+1. they can manage all the users, planners. he the performance. how they use our system.
+2. they solve the issue of the planners, users
+3. they confirm the transaction of planners withdraw 
+4. they will reponse for any query
+
+**manager of employee can add new employee to their system. then the new employee can login to system
+**manager see their performance.
