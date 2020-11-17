@@ -1,5 +1,7 @@
 <?php
 
+require_once "common-codes/session-code.php";
+
 
 ?>
 
@@ -23,6 +25,10 @@
         .new-client-list {
             margin: 30px auto;
             width: 800px;
+        }
+
+        .active-new-reg{
+            background-color: aliceblue;
         }
     </style>
 </head>

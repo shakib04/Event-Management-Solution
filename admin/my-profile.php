@@ -1,3 +1,24 @@
+<?php
+
+require_once "common-codes/session-code.php";
+
+$admins = simplexml_load_file("data.xml");
+$admin = $admins->admin;
+
+foreach ($admin as $user) {
+    if ($user->username == $_SESSION['username']) {
+        $fullname = $user->fname;
+        $email = $user->email;
+        $gender = $user->gender;
+        $contact = $user->contact;
+        $address = $user->address;
+        $type = $user->type;
+        break;
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +47,10 @@
             margin: 30px auto;
             width: 800px;
         }
+
+        .active-my-profile {
+            background-color: aliceblue;
+        }
     </style>
 </head>
 
@@ -36,36 +61,36 @@
         <table>
             <tr>
                 <td>username</td>
-                <td>shakib001</td>
+                <td><?php echo $_SESSION['username']; ?></td>
             </tr>
             <tr>
                 <td>Full Name</td>
-                <td>Md. Shakibul Alam</td>
+                <td><?php echo $fullname; ?></td>
             </tr>
             <tr>
                 <td>Email</td>
-                <td>sss@gmail.com</td>
+                <td><?php echo $email; ?></td>
             </tr>
 
             <tr>
                 <td>User Type</td>
-                <td>Admin</td>
+                <td><?php echo $type; ?></td>
             </tr>
 
             <tr>
                 <td>Gender</td>
-                <td>Male</td>
+                <td><?php echo $gender; ?></td>
             </tr>
 
 
             <tr>
                 <td>Phone Number:</td>
-                <td>01433454433</td>
+                <td><?php echo $contact; ?></td>
             </tr>
 
             <tr>
-                <td>Location</td>
-                <td>Dhaka</td>
+                <td>Address</td>
+                <td><?php echo $address; ?></td>
             </tr>
 
             <tr>

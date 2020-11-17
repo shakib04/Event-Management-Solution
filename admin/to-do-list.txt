@@ -16,3 +16,9 @@ Admin:
 •	CRUD all User with search
 •	Can see event order list from individual Event planner with user info.
 •	Can see event avg and total profit from delivered event program.
+
+
+
+git remote add origin https://github.com/shakib04/web-fall2020-project.git
+git branch -M main
+git push -u origin main

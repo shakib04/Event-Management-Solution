@@ -1,3 +1,9 @@
+<?php
+
+require_once "common-codes/session-code.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +32,10 @@
         .business-stats {
             margin: 30px auto;
             width: 800px;
+        }
+
+        .active-my-business {
+            background-color: aliceblue;
         }
     </style>
 </head>

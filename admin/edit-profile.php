@@ -1,14 +1,32 @@
 <?php
-session_start();
 
-if ($_SESSION['username'] == null) {
-    header("location: login.php");
+require_once "common-codes/session-code.php";
+
+require_once "validation/save-profile.php";
+
+
+
+
+echo "<pre>";
+//print_r($admin);
+echo "</pre>";
+
+
+foreach ($admin as $user) {
+    if ($user->username == $_SESSION['username']) {
+        $fullname = $user->fname;
+        $email = $user->email;
+        $gender = $user->gender;
+        $contact = $user->contact;
+        $address = $user->address;
+        break;
+    }
 }
 
-if (isset($_POST['logout'])) {
-    session_unset();
-    header("location: login.php");
-}
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -40,21 +58,24 @@ if (isset($_POST['logout'])) {
             margin: 30px auto;
             width: 800px;
         }
+
+        
     </style>
 </head>
 
 <body>
-    <form action="">
-        <h4>Edit Profile of shakib00</h4>
+    <a href="my-profile.php">Go Back to My Profile</a>
+    <form action="" method="POST">
+        <h4>Edit Profile of <?php echo $_SESSION['username']; ?></h4>
         <table>
             <tr>
                 <td>Full Name</td>
-                <td><input type="text" name="" id="" value="Full Name"></td>
+                <td><input type="text" name="fullname" id="" value="<?php echo $fullname; ?>"></td>
             </tr>
             <tr>
                 <td>Email</td>
                 <td>
-                    <input type="email" name="" value="email@ex.com" id="">
+                    <input type="email" name="email" value="<?php echo $email; ?>" id="">
                 </td>
             </tr>
             <tr>
@@ -68,20 +89,20 @@ if (isset($_POST['logout'])) {
             <tr>
                 <td>Phone Number</td>
                 <td>
-                    <input type="text" name="" id="" value="01312456743">
+                    <input type="text" name="contact" id="" value="<?php echo $contact; ?>">
                 </td>
             </tr>
 
             <tr>
-                <td>Location</td>
+                <td>Local Address</td>
                 <td>
-                    <textarea name="" id=""> Dhaka</textarea>
+                    <textarea name="address" id="" value="<?php echo $address; ?>"> Dhaka</textarea>
                 </td>
             </tr>
 
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="Save">
+                    <input type="submit" name="submit" value="Save">
                 </td>
             </tr>
         </table>

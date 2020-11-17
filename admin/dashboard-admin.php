@@ -1,5 +1,6 @@
 <?php
 
+require_once "common-codes/session-code.php";
 
 
 ?>
@@ -8,7 +9,6 @@
 
 <head>
     <title>Dasboard</title>
-    <link rel="stylesheet" href="../css/reset.css">
     <style>
         .inter-linked-pages {
             background-color: #f1dac5;
@@ -66,6 +66,10 @@
 
         .all-section>div:nth-child(odd) {
             background-color: #CAD3C8;
+        }
+
+        .active-dashboard {
+            background-color: aliceblue;
         }
     </style>
 </head>

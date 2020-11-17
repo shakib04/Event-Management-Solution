@@ -1,23 +1,8 @@
-<?php
-session_start();
-
-if ($_SESSION['username'] == null) {
-    header("location: login.php");
-}
-
-if (isset($_POST['logout'])) {
-    session_unset();
-    session_destroy();
-    header("location: login.php");
-}
-?>
-
-
 <html>
 
 <head>
     <title>Dasboard</title>
-    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/reset.css">
     <style>
         .inter-linked-pages {
             background-color: #f1dac5;
@@ -44,7 +29,7 @@ if (isset($_POST['logout'])) {
             cursor: pointer;
         }
 
-        .log-out-button{
+        .log-out-button {
             background-color: red;
             padding: 2px;
             color: white;
@@ -61,12 +46,12 @@ if (isset($_POST['logout'])) {
     </form>
 
     <div class="inter-linked-pages">
-        <a href="dashboard-admin.php">Dashboard</a>
-        <a href="business-stats.php">My Business Data</a>
-        <a href="new-registered.php">New Registered Users</a>
-        <a href="client-users-list.php">List of Client Type User</a>
-        <a href="event-planners-list.php">All Event Planners</a>
-        <a href="my-profile.php">Profile</a>
+        <a href="dashboard-admin.php" class="active-dashboard">Dashboard</a>
+        <a href="business-stats.php" class="active-my-business">My Business Data</a>
+        <a href="new-registered.php" class="active-new-reg">New Registered Users</a>
+        <a href="client-users-list.php" class="active-client">List of Client Type User</a>
+        <a href="event-planners-list.php" class="active-event-planner-list">All Event Planners</a>
+        <a href="my-profile.php" class="active-my-profile">Profile</a>
     </div>
 
 </body>

@@ -1,3 +1,11 @@
  
  //nav bar
  <?php include_once "common-codes/nav-bar.php" ?>
+
+
+ <?php
+
+require_once "common-codes/session-code.php";
+
+
+?>

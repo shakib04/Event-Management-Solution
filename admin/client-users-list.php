@@ -1,3 +1,10 @@
+<?php
+
+require_once "common-codes/session-code.php";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +38,10 @@
         .planner-card .profile-pic {
             width: 100%;
             height: 250px;
+        }
+
+        .active-client {
+            background-color: aliceblue;
         }
     </style>
 </head>
