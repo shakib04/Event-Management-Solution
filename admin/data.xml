@@ -1,25 +1,33 @@
 <?xml version="1.0"?>
 <root>
-    <admin>
-        <fname>Rakib</fname>
-        <username>s2</username>
-        <password>2</password>
-        <email>sds@gma.com</email>
-        <type>admin</type>
-        <gender>Male</gender>
-        <contact>0133543554</contact>
-        <address>Dhaka</address>
-    </admin>
-    <admin>
-        <fname>shakibul alam</fname>
-        <username>s1</username>
-        <password>1</password>
-        <email>sdsd@dsf.com</email>
-        <type>admin</type>
-        <gender>Male</gender>
-        <contact>0133543557</contact>
-        <address>Dhaka</address>
-    </admin>
-
-    
+  <user>
+    <fname>Rakib</fname>
+    <username>s2</username>
+    <password>2</password>
+    <email>sds@gma.com</email>
+    <type>admin</type>
+    <gender>Male</gender>
+    <contact>0133543554</contact>
+    <address>Dhaka</address>
+  </user>
+  <user>
+    <fname>shakibul alam</fname>
+    <username>s1</username>
+    <password>1</password>
+    <email>sdsd@dsf.com</email>
+    <type>admin</type>
+    <gender>Male</gender>
+    <contact>0133543557</contact>
+    <address>Dhaka</address>
+  </user>
+  <user>
+    <fname>Shakib</fname>
+    <username>dfdsfsd</username>
+    <password>shakibul#1</password>
+    <gender>Male</gender>
+    <type>Employee</type>
+    <email>mdshakibulalam@gmail.com</email>
+    <contact>01622047400</contact>
+    <address>  nikuja-2,road  20, home no 6</address>
+  </user>
 </root>

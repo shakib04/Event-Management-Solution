@@ -5,7 +5,7 @@ $err_fullname = $err_username = $err_password = $err_cfpassword = $err_email = $
 //$fullname = $email = $gender = $contact = $address = "";
 
 $admins = simplexml_load_file("data.xml");
-$admin = $admins->admin;
+$admin = $admins->user;
 foreach ($admin as $user) {
     if ($user->username == $_SESSION['username']) {
         $fullname = $user->fname;

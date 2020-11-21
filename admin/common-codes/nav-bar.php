@@ -12,7 +12,7 @@
         .inter-linked-pages a {
             padding: 15px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         a:hover {
@@ -42,7 +42,7 @@
 <body>
 
     <form action="" method="post">
-        <input type="submit" value="Log Out" class="log-out-button" name="logout">
+        <input type="submit" value="Log Out, <?php echo $_SESSION['username']; ?>" class="log-out-button" name="logout">
     </form>
 
     <div class="inter-linked-pages">
@@ -52,6 +52,7 @@
         <a href="client-users-list.php" class="active-client">List of Client Type User</a>
         <a href="event-planners-list.php" class="active-event-planner-list">All Event Planners</a>
         <a href="my-profile.php" class="active-my-profile">Profile</a>
+        <a href="add-employee.php" class="active-add-new-employee">Add New Employee</a>
     </div>
 
 </body>

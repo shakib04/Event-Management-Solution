@@ -34,15 +34,16 @@ if (isset($_POST['login'])) {
     }
 
     if ($validCount == 2) {
-        $admins = simplexml_load_file("data.xml");
-        $admin = $admins->admin;
+        $data = simplexml_load_file("data.xml");
+        $user = $data->user;
         $flag = false;
 
-        foreach ($admin as $user) {
+        foreach ($user as $user1) {
             //echo $user->username . "  " . $user->password . "<br>";
             //echo $username . "  " . $password . "<br>";
-            if ($user->username == $username && $user->password == $password) {
+            if ($user1->username == $username && $user1->password == $password) {
                 $flag = true;
+                $userType = $user1->type;
                 break;
             }
         }

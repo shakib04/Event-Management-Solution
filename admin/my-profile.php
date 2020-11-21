@@ -3,7 +3,7 @@
 require_once "common-codes/session-code.php";
 
 $admins = simplexml_load_file("data.xml");
-$admin = $admins->admin;
+$admin = $admins->user;
 
 foreach ($admin as $user) {
     if ($user->username == $_SESSION['username']) {

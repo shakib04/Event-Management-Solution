@@ -53,7 +53,7 @@ require_once "common-codes/session-code.php";
         <?php include_once "common-codes/search-option.php" ?>
         <h2>Event Planners</h2>
         <div class="planner-card">
-            <!-- <img src="5.jpg" alt="" class="profile-pic"> <br> -->
+            
             Username: <a href="">shakib001</a> <br>
             Earned : 150,000 Taka <br>
             Event Completed: 10 <br>
@@ -62,7 +62,7 @@ require_once "common-codes/session-code.php";
             <a href="">Delete</a>
         </div>
         <div class="planner-card">
-            <!-- <img src="5.jpg" alt="" class="profile-pic"> <br> -->
+            
             Username: <a href="">shakib001</a> <br>
             Earned : 150,000 Taka <br>
             Event Completed: 10 <br>
@@ -71,7 +71,7 @@ require_once "common-codes/session-code.php";
             <a href="">Delete</a>
         </div>
         <div class="planner-card">
-            <!-- <img src="5.jpg" alt="" class="profile-pic"> <br> -->
+            
             Username: <a href="">shakib001</a> <br>
             Earned : 150,000 Taka <br>
             Event Completed: 10 <br>
@@ -80,7 +80,7 @@ require_once "common-codes/session-code.php";
             <a href="">Delete</a>
         </div>
         <div class="planner-card">
-            <!-- <img src="5.jpg" alt="" class="profile-pic"> <br> -->
+            
             Username: <a href="">shakib001</a> <br>
             Earned : 150,000 Taka <br>
             Event Completed: 10 <br>

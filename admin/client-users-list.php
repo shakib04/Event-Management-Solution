@@ -52,39 +52,39 @@ require_once "common-codes/session-code.php";
     <div class="all-event-planner">
 
         <?php include_once "common-codes/search-option.php" ?>
-        <h2>All Clients [Order by Amount Purchased]</h2>
+        <h2>All Clients [Order by Amount Spent]</h2>
         <div class="planner-card">
-            <!-- <img src="5.jpg" alt="" class="profile-pic"> <br> -->
+
             Username: <a href="">shakib001</a> <br>
-            Purchased : 150,000 Taka <br>
-            Event Completed: 10 <br>
+            Spent : 50,000 Taka <br>
+            Event Completed: 1 <br>
             Rating: 4.5 <br>
             <a href="">Edit</a>
             <a href="">Delete</a>
         </div>
         <div class="planner-card">
-            <!-- <img src="5.jpg" alt="" class="profile-pic"> <br> -->
+
             Username: <a href="">shakib001</a> <br>
-            Earned : 150,000 Taka <br>
-            Event Completed: 10 <br>
-            Rating: 4.5<br>
-            <a href="">Edit</a>
-            <a href="">Delete</a>
-        </div>
-        <div class="planner-card">
-            <!-- <img src="5.jpg" alt="" class="profile-pic"> <br> -->
-            Username: <a href="">shakib001</a> <br>
-            Earned : 150,000 Taka <br>
-            Event Completed: 10 <br>
+            Spent : 50,000 Taka <br>
+            Event Completed: 1 <br>
             Rating: 4.5 <br>
             <a href="">Edit</a>
             <a href="">Delete</a>
         </div>
         <div class="planner-card">
-            <!-- <img src="5.jpg" alt="" class="profile-pic"> <br> -->
+
             Username: <a href="">shakib001</a> <br>
-            Earned : 150,000 Taka <br>
-            Event Completed: 10 <br>
+            Spent : 50,000 Taka <br>
+            Event Completed: 1 <br>
+            Rating: 4.5 <br>
+            <a href="">Edit</a>
+            <a href="">Delete</a>
+        </div>
+        <div class="planner-card">
+
+            Username: <a href="">shakib001</a> <br>
+            Spent : 50,000 Taka <br>
+            Event Completed: 1 <br>
             Rating: 4.5 <br>
             <a href="">Edit</a>
             <a href="">Delete</a>
