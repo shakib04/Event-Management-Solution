@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<planners>
+  <planner>
+    <firstname>Abrar</firstname>
+    <lastname>4567</lastname>
+    <dateofbirth>25/10/1998</dateofbirth>
+    <compname>sobia subhan ltd</compname>
+    <email>abrarahmed62@gmail.com</email>
+    <address>39/A batayan</address>
+    <cont>01712323231</cont>
+    <password>34fda34</password>
+    <type> planner </type>
+  </planner>
+  <planner>
+    <firstname>abrar</firstname>
+    <lastname>ahmed</lastname>
+    <dateofbirth>01/01/1995</dateofbirth>
+    <compname>something limitted</compname>
+    <email>andna@gmail.com</email>
+    <address>somewhere in bd</address>
+    <cont>01718181187</cont>
+    <password>23344455sd</password>
+    <type>planner</type>
+  </planner>
+  <planner>
+    <firstname>abrar</firstname>
+    <lastname>ahmed</lastname>
+    <dateofbirth>01/01/1995</dateofbirth>
+    <compname>something limitted</compname>
+    <email>andna@gmail.com</email>
+    <address>somewhere in bd</address>
+    <cont>01718181187</cont>
+    <password>123456789</password>
+    <type>planner</type>
+  </planner>
+</planners>
