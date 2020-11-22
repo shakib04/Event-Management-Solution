@@ -194,7 +194,7 @@ if (isset($_POST['register'])) {
             fwrite($file, $newXmlobj->saveXML());
 
             //header("Location: login.php");
-            $err_
+            $err_user_registered = "Emloyee Added";
         }
     }
 

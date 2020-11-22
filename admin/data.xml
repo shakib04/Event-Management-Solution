@@ -50,4 +50,14 @@
     <contact>01622047400</contact>
     <address> nikuja-2,road  20, home no 6</address>
   </user>
+  <user>
+    <fname>Shakib</fname>
+    <username>ccccc</username>
+    <password>shakibul#1</password>
+    <gender>Male</gender>
+    <type>Employee</type>
+    <email>mdshakibulalam@gmail.com</email>
+    <contact>01622047400</contact>
+    <address>nikuja-2,road  20, home no 6</address>
+  </user>
 </root>
