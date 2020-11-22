@@ -162,11 +162,10 @@ if (isset($_POST['register'])) {
     if ($validCount == 9) {
         $data = simplexml_load_file("data.xml");
         $flagNewUser = true;
-
         $user = $data->user;
 
         foreach ($user as $user1) {
-            if ($user1->username == $_SESSION['username']) {
+            if ($user1->username == $username) {
                 $flagNewUser = false;
                 $err_user_registered = "<span style='color: red; font-size: 20px;'> Alreday Registered ! Select Different Username </span>";
                 break;
@@ -195,7 +194,7 @@ if (isset($_POST['register'])) {
             fwrite($file, $newXmlobj->saveXML());
 
             //header("Location: login.php");
-            echo "User Added";
+            $err_
         }
     }
 
