@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<users>
+  <user>
+    <fname>Bithi</fname>
+    <uname>era123</uname>
+    <pass>eranira123*#</pass>
+    <gender>Female</gender>
+    <email>eranira@gmail.com</email>
+  </user>
+  <user>
+    <fname/>
+    <uname/>
+    <pass/>
+    <gender/>
+    <email/>
+  </user>
+  <user>
+    <fname>era</fname>
+    <uname>niraera123</uname>
+    <pass>eranira1#?</pass>
+    <gender>Female</gender>
+    <email>era@gmail.com</email>
+  </user>
+</users>

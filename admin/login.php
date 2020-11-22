@@ -58,6 +58,7 @@ require_once("validation/login-validation.php");
                 <td><input type="submit" id="" name="login" value="Login"></td>
             </tr>
         </table>
+        <?php echo $invalidCred; ?>
     </form>
 
 </body>
