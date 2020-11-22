@@ -1,5 +1,7 @@
 <?php
 
+
+
 function validate($data)
 {
     $data = trim($data);
@@ -7,7 +9,7 @@ function validate($data)
     $data = htmlentities($data);
     return $data;
 }
-$err_username = $er_password = $username = $password = $invalidCred = "" ;
+$err_username = $er_password = $username = $password = $invalidCred = "";
 
 $validCount = 0;
 
@@ -45,7 +47,7 @@ if (isset($_POST['login'])) {
 
         if ($flag) {
             $_SESSION['username'] = $username;
-            $_SESSION['type'] = $userType;
+            //$_SESSION['type'] = $userType;
             header("Location: dashboard-admin.php");
             //$_POST['username'] = $username;
         } else {

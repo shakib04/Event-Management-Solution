@@ -3,7 +3,17 @@ require_once "common-codes/session-code.php";
 
 require_once "validation/add-employee-validation.php";
 
-if (strtolower($_SESSION['type']) != "admin") {
+$data = simplexml_load_file("data.xml");
+$user = $data->user;
+
+foreach ($user as $user1) {
+    if ($user1->username == $_SESSION['username']) {
+        $type = $user1->type;
+        break;
+    }
+}
+
+if (strtolower($type) != "admin") {
     header("location: dashboard-admin.php");
 }
 
