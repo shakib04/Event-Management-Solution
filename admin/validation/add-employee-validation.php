@@ -168,13 +168,13 @@ if (isset($_POST['register'])) {
         foreach ($user as $user1) {
             if ($user1->username == $_SESSION['username']) {
                 $flagNewUser = false;
-                $err_user_registered = "Alreday Registered";
+                $err_user_registered = "<span style='color: red; font-size: 20px;'> Alreday Registered ! Select Different Username </span>";
                 break;
             }
         }
 
 
-        if ($flagUserRegistered) {
+        if ($flagNewUser) {
             $user = $data->addChild("user");
             $user->addChild("fname", $fullname);
             $user->addChild("username", $username);

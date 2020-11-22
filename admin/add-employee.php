@@ -120,7 +120,7 @@ if (strtolower($type) != "admin") {
                 <td><input type="submit" id="" name="register" value="Add"></td>
             </tr>
         </table>
-        echo $err_user_registered;
+        <?php echo $err_user_registered; ?>
     </form>
 </body>
 
