@@ -3,6 +3,9 @@ require_once "common-codes/session-code.php";
 
 require_once "validation/add-employee-validation.php";
 
+if (strtolower($_SESSION['type']) != "admin") {
+    header("location: dashboard-admin.php");
+}
 
 ?>
 

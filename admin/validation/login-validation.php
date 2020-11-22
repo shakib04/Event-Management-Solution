@@ -7,29 +7,24 @@ function validate($data)
     $data = htmlentities($data);
     return $data;
 }
-$err_username = $er_password = $username = $password = "";
+$err_username = $er_password = $username = $password = $invalidCred = "" ;
 
-$hasError = true;
 $validCount = 0;
 
 if (isset($_POST['login'])) {
 
 
-    if (empty(trim($_POST['password']))) {
+    if (empty(trim($_POST['username']))) {
         $err_username = "<span style='color:red;'>Username is Required</span>";
-        $hasError = true;
     } else {
         $username = validate($_POST['username']);
-        $hasError = false;
         $validCount++;
     }
 
     if (empty(trim($_POST['password']))) {
         $er_password = "<span style='color:red;'> Password is Required </span>";
-        $hasError = true;
     } else {
         $password = validate($_POST['password']);
-        $hasError = false;
         $validCount++;
     }
 
@@ -50,10 +45,11 @@ if (isset($_POST['login'])) {
 
         if ($flag) {
             $_SESSION['username'] = $username;
+            $_SESSION['type'] = $userType;
             header("Location: dashboard-admin.php");
-            $_POST['username'] = $username;
+            //$_POST['username'] = $username;
         } else {
-            echo "Invalid Username and Password";
+            $invalidCred = "Invalid Username and Password";
         }
     }
 }
