@@ -38,7 +38,7 @@
 			else{
 				session_start();
 			    $_SESSION["uname"] = $uname;
-			    setcookie("uname",$uname,time() + 120);
+			    setcookie("uname",$uname,time() + 60);
                 header("Location:user.php");
 			}
 		}

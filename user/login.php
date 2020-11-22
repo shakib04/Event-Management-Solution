@@ -1,4 +1,7 @@
-<?php include_once "php_codes/login_validation.php" ;?>
+ 
+<?php
+     include_once "php_codes/login_validation.php" ;
+?> 
 <html>
     <head>
         <title>Login</title>

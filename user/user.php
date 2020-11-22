@@ -1,3 +1,11 @@
+  
+<?php
+    if(!isset($_COOKIE["uname"])){
+		header("Location: login.php");
+	}
+?> 
+ 
+<html>
 <head>
     
     <title>USER</title>
@@ -7,12 +15,14 @@
 
 <body>
 
-    <div class="log-out grid-item"><button>Log out</button></div>
+    <div class="log-out grid-item">
 	
+	    <a href="login.php">logout</a>
+	</div>
     <div class="layout grid-cont">
         
         <div class="navigation grid-item">
-		    <a href="">Home</a>
+		    <a href="user.php">Home</a>
             <a href="Price_package.php">Price & package </a>
             <a href="Event.php">Event set design </a>
 			<a href="order.php">Order </a>
