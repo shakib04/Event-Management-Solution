@@ -21,3 +21,8 @@ a:hover {
 button:hover {
     cursor: pointer;
 }
+
+.error-message {
+    font-weight: bold;
+    color: red;
+}

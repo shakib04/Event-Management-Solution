@@ -1,5 +1,6 @@
 <?php
 
+require_once "database-conn.php";
 
 
 function validate($data)
@@ -31,27 +32,40 @@ if (isset($_POST['login'])) {
     }
 
     if ($validCount == 2) {
-        $data = simplexml_load_file("data.xml");
-        $user = $data->user;
+
         $flag = false;
 
-        foreach ($user as $user1) {
-            //echo $user->username . "  " . $user->password . "<br>";
-            //echo $username . "  " . $password . "<br>";
-            if ($user1->username == $username && $user1->password == $password) {
+        $sql = "select username, password, type from all_registered_users where username = ? and password = ?;";
+
+        //create a prepared statement
+        $stmt = mysqli_stmt_init($conn);
+
+        //prepare the prepared statement
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            echo "Sql Statement Failed";
+        } else {
+            //bind parameters to the placeholder
+            mysqli_stmt_bind_param($stmt, "ss", $username, $password);
+            //run parameter inside database
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            if (mysqli_num_rows($result) == 1) {
+                $row = mysqli_fetch_assoc($result);
+                $type = strtolower($row['type']);
                 $flag = true;
-                $userType = $user1->type;
-                break;
             }
         }
 
         if ($flag) {
             $_SESSION['username'] = $username;
-            //$_SESSION['type'] = $userType;
-            header("Location: dashboard-admin.php");
-            //$_POST['username'] = $username;
+            $_SESSION['type'] = $type;
+            if ($type == "admin") {
+
+                header("Location: dashboard-admin.php");
+            }
         } else {
-            $invalidCred = "Invalid Username and Password";
+            $invalidCred = "<span class='error-message'>Invalid Username and Password</span>";
         }
     }
 }

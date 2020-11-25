@@ -2,7 +2,9 @@
 
 session_start();
 if (isset($_SESSION['username'])) {
-    header('Location:dashboard-admin.php');
+    if ($_SESSION['type'] == "admin") {
+        header("location:dashboard-admin.php");
+    }
 }
 
 require_once("validation/login-validation.php");
@@ -13,14 +15,18 @@ require_once("validation/login-validation.php");
 <head>
     <title>Registration</title>
 
+    <link rel="stylesheet" href="css/reset.css">
+
     <style>
+        
+
         td {
             font-weight: bold;
         }
 
         form {
             border: 1px solid darkblue;
-            width: 300px;
+            width: 400px;
             margin: 0 auto;
             margin-top: 20%;
             padding: 3%;
@@ -34,12 +40,19 @@ require_once("validation/login-validation.php");
         input[type=reset] {
             cursor: pointer;
         }
+
+        .login-box {
+            background-color: dimgray;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+        }
     </style>
 </head>
 
 <body>
     <form action="" method="post">
-        <div style="background-color: dimgray; padding: 10px; color:white; font-size: 20px;">Login</div>
+        <div class="login-box">Login</div>
         <table>
             <tr>
                 <td>Username</td>
@@ -60,7 +73,7 @@ require_once("validation/login-validation.php");
         </table>
         <?php echo $invalidCred; ?>
     </form>
-
+   
 </body>
 
 </html>
