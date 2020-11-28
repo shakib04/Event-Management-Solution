@@ -45,7 +45,7 @@ echo "</pre>";
 <body>
     <a href="profile.php">Go Back to My Profile</a>
     <form action="" method="POST">
-        <h4>Edit Profile of <?php //echo $_SESSION['username']; 
+        <h4>Edit Profile of <?php echo $_SESSION['username']; 
                             ?></h4>
         <table>
             <tr>

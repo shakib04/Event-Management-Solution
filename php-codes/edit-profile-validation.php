@@ -1,22 +1,24 @@
 <?php
 
+session_start();
+
 $err_fullname = $err_username = $err_password = $err_cfpassword = $err_email = $err_contact = $err_address = $err_gender = "";
 
 //$fullname = $email = $gender = $contact = $address = "";
 
-// $admins = simplexml_load_file("data.xml");
-// $admin = $admins->user;
-// foreach ($admin as $user) {
-//     if ($user->username == $_SESSION['username']) {
-//         $fullname = $user->fname;
-//         $email = $user->email;
-//         $gender = $user->gender;
-//         $contact = $user->contact;
-//         $address = $user->address;
-//         break;
-//     }
-// }
+require_once "php-codes/database-conn.php";
+$sql = "SELECT * FROM `all_registered_users` where username = '" . $_SESSION['username'] . "'";
+echo "<pre>";
+//print_r(getColumsValue($sql));
+echo "</pre>";
+$columns = getColumsValue($sql);
 
+$fullname = $columns[0]['Full_Name'];
+$email = $columns[0]['email'];
+$type = $columns[0]['type'];
+$gender = $columns[0]['gender'];
+$contact = $columns[0]['phone_number'];
+$address = $columns[0]['full_address'];
 
 
 
@@ -34,7 +36,7 @@ $validCount = 0;
 
 if (isset($_POST['submit'])) {
 
-    //full name validation
+    //full name validation 1
 
     if (empty(trim($_POST['fullname']))) {
         $err_fullname = "<span style='color:red;'> Name is Required </span>";
@@ -43,7 +45,7 @@ if (isset($_POST['submit'])) {
         $validCount++;
     }
 
-    //gender validation
+    //gender validation 2
 
     if (!isset($_POST['gender'])) {
         $err_gender = "<span style='color:red;'> (Must Select 1) </span>";
@@ -52,7 +54,7 @@ if (isset($_POST['submit'])) {
         $validCount++;
     }
 
-    //email validation
+    //email validation 3
 
     if (empty(trim($_POST['email']))) {
         $err_email = "<span style='color:red;'> Email is Required </span>";
@@ -81,7 +83,7 @@ if (isset($_POST['submit'])) {
     }
 
 
-    //Phone number fields will only accept numeric value.
+    //Phone number fields will only accept numeric value. 4
 
     if (empty(trim($_POST['contact']))) {
         $err_contact = "<span style='color:red;'> Phone Number is Required </span>";
@@ -95,7 +97,7 @@ if (isset($_POST['submit'])) {
     }
 
 
-    //address validation
+    //address validation 5
 
     if (empty(trim($_POST['address']))) {
         $err_address = "<span style='color:red;'> Address is Required </span>";
@@ -104,28 +106,12 @@ if (isset($_POST['submit'])) {
         $validCount++;
     }
 
-
-
-    // $fullname = $_POST['fullname'];
-    // $email = $_POST['email'];
-    // $gender = $_POST['gender'];
-    // $contact = $_POST['contact'];
-    // $address = $_POST['address'];
-    // $address = $_POST['address'];
-
     if ($validCount == 5) {
-        foreach ($admin as $user) {
-            if ($user->username == $_SESSION['username']) {
-                $user->fname = $fullname;
-                $user->email = $email;
-                $user->gender = $gender;
-                $user->contact = $contact;
-                $user->address = $address;
-                break;
-            }
+        $sql = "UPDATE `all_registered_users` SET `Full_Name` = '$fullname', `gender` = '$gender', `email` = '$email', `phone_number` = '$contact', `full_address` = '$address' WHERE `all_registered_users`.`username` = '" . $_SESSION['username'] . "';";
+        if (execute($sql)) {
+            header("location: profile.php");
+        } else {
+            echo "Failed to Save";
         }
-
-        file_put_contents("data.xml", $admins->saveXML());
-        header("location: profile.php");
     }
 }
