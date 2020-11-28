@@ -21,4 +21,11 @@
     <gender>Female</gender>
     <email>era@gmail.com</email>
   </user>
+   <user>
+    <fname>era</fname>
+    <uname>u</uname>
+    <pass>1</pass>
+    <gender>Female</gender>
+    <email>era@gmail.com</email>
+  </user>
 </users>
