@@ -135,9 +135,8 @@ if (isset($_SESSION['username'])) {
                         I want to
                     </td>
                     <td>
-                        <input type="radio" name="type" id="" checked value="Client"> Search a Planner <br>
-                        <input type="radio" name="type" id="" value="Planner"> Plan for People
-
+                        <input type="radio" name="type" id="" checked value="1">(User) Search a Planner <br>
+                        <input type="radio" name="type" id="" value="2">(Planner) Plan for People
                     </td>
                 </tr>
 
@@ -152,8 +151,7 @@ if (isset($_SESSION['username'])) {
                 <tr>
                     <td>Confirm Password</td>
                     <td>
-                        <input type="text" value="<?php echo $cfpassword; ?>" name="cfpassword" id="" value="<?PHP //echo $cfpassword; 
-                                                                                                                ?>"> <?php echo $err_cfpassword; ?>
+                        <input type="text" value="<?php echo $cfpassword; ?>" name="cfpassword" id=""> <?php echo $err_cfpassword; ?>
                     </td>
                 </tr>
 
@@ -163,8 +161,9 @@ if (isset($_SESSION['username'])) {
                         <?php echo $err_gender; ?>
                     </td>
                     <td>
-                        <input type="radio" checked name="gender" id="" value="Male">Male
-                        <input type="radio" name="gender" id="" value="Female">Female
+                        <input type="radio" checked name="gender" id="" value="1">Male
+                        <input type="radio" name="gender" id="" value="2">Female
+                        <input type="radio" name="gender" id="" value="3">Others
                     </td>
                 </tr>
 

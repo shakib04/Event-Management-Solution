@@ -48,9 +48,14 @@ if (isset($_POST['register'])) {
 
     if (!isset($_POST['type'])) {
         $err_type = "<span style='color:red;'>Select 1 </span>";
-    } else {
-        $type = $_POST['type'];
+    } elseif ($_POST['type'] == "1") {
+        $type = "user";
         $validCount++;
+    } elseif ($_POST['type'] == "2") {
+        $type = "planner";
+        $validCount++;
+    } else {
+        $err_type = "<span style='color:red;'>Invalid Selection! </span>";
     }
 
 
@@ -94,9 +99,17 @@ if (isset($_POST['register'])) {
 
     if (!isset($_POST['gender'])) {
         $err_gender = "<span style='color:red;'> (Must Select 1) </span>";
-    } else {
-        $gender = $_POST['gender'];
+    } elseif ($_POST['gender'] == "1") {
+        $gender = "male";
         $validCount++;
+    } elseif ($_POST['gender'] == "2") {
+        $gender = "female";
+        $validCount++;
+    } elseif ($_POST['gender'] == "3") {
+        $gender = "others";
+        $validCount++;
+    } else {
+        $err_gender = "<span style='color:red;'> (Invalid Selection) </span>";
     }
 
 
@@ -199,7 +212,4 @@ if (isset($_POST['register'])) {
 
         //header("Location: login.php");
     }
-
-
-   
 }
