@@ -2,7 +2,7 @@
 session_start();
 
 if ( !isset($_SESSION['username']) ) {
-    header("location: login.php");
+    header("location: ../homepage.php");
 }
 
 if (isset($_POST['logout'])) {
@@ -10,4 +10,3 @@ if (isset($_POST['logout'])) {
     session_destroy();
     header("location: ../homepage.php");
 }
-?>

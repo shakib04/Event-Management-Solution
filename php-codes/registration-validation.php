@@ -202,7 +202,7 @@ if (isset($_POST['register'])) {
         //first check duplicate user 
 
         //create a templete
-        $sql = "INSERT INTO `all_registered_users` (`Full_Name`, `username`, `password`, gender, `type`, `email`, `phone_number`, `full_address`) VALUES ('$fullname', '$username', '$password', '$gender', '$type', '$email', '$phoneNumber', '$address')";
+        $sql = "INSERT INTO `all_registered_users` (`Full_Name`, `username`, `password`, gender, `type`, `approved`, `email`, `phone_number`, `full_address`) VALUES ('$fullname', '$username', '$password', '$gender', '$type', 'no', '$email', '$phoneNumber', '$address')";
         $sql2 = "INSERT INTO `all_users_profile` (`username`, `birthdate`, `profile_pic`) VALUES ('$username', '2020-11-28', 'profiles/default-profile-pic.jpg');";
         if (execute($sql) and execute($sql2)) {
             echo "Registration Success";
