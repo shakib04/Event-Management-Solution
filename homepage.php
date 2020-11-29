@@ -2,6 +2,12 @@
 
 session_start();
 
+if (isset($_SESSION['username'])) {
+    if (strtolower($_SESSION['type']) == "admin") {
+        header("location:admin/dashboard-admin.php");
+    }
+}
+
 // echo "<h3> Hi,  " . $_SESSION['username'] . "</h3>";
 
 // require_once "header.php";
@@ -147,7 +153,7 @@ session_start();
                     <td>Confirm Password</td>
                     <td>
                         <input type="text" value="<?php echo $cfpassword; ?>" name="cfpassword" id="" value="<?PHP //echo $cfpassword; 
-                                                                                                        ?>"> <?php echo $err_cfpassword; ?>
+                                                                                                                ?>"> <?php echo $err_cfpassword; ?>
                     </td>
                 </tr>
 

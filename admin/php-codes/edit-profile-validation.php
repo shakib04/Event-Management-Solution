@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $err_fullname = $err_username = $err_password = $err_cfpassword = $err_email = $err_contact = $err_address = $err_gender = "";
 
 //$fullname = $email = $gender = $contact = $address = "";

@@ -58,15 +58,10 @@ if (isset($_POST['login'])) {
         if ($flag) {
             $_SESSION['username'] = $login_username;
             $_SESSION['type'] = $type;
-            if ($type == "admin") {
-                header("location:admin/dashboard-admin.php");
-            } elseif ($type == "client" or $type == "user") {
-                header("location:user/");
-            } elseif ($type == "vendor") {
-                header("location:vendor/");
-            } elseif ($type == "planner") {
-                header("location:eventplanner/");
-            }
+            //if ($type == "admin") {
+
+            header("Location: profile.php");
+            //}
         } else {
             $invalidCred = "<span class='error-message'>Invalid Username and Password</span>";
         }

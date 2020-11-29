@@ -1,6 +1,6 @@
 <?php
 require_once "php-codes/session-code.php";
-require_once "top-log-out.php";
+//require_once "top-log-out.php";
 
 require_once "php-codes/database-conn.php";
 
@@ -69,7 +69,7 @@ $profile_pic_address = $columns[0]['profile_pic'];
 <body>
     <?php 
     if (strtolower($_SESSION['type']) == "admin") {
-        include_once "admin/common-codes/nav-bar.php";
+        include_once "common-codes/nav-bar.php";
     }
     ?>
 

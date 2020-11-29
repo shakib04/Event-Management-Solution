@@ -51,7 +51,7 @@
         <a href="new-registered.php" class="active-new-reg">New Registered Users</a>
         <a href="client-users-list.php" class="active-client">List of Client Type User</a>
         <a href="event-planners-list.php" class="active-event-planner-list">All Event Planners</a>
-        <a href="my-profile.php" class="active-my-profile">Profile</a>
+        <a href="profile.php" class="active-my-profile">Profile</a>
         <a href="add-employee.php" class="active-add-new-employee">Add New Employee</a>
     </div>
 
