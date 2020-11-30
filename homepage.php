@@ -10,8 +10,6 @@ if (isset($_SESSION['username'])) {
 
 // echo "<h3> Hi,  " . $_SESSION['username'] . "</h3>";
 
-// require_once "header.php";
-
 
 ?>
 
@@ -21,7 +19,6 @@ if (isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
     <style>
         .demo-event-pictures {}
@@ -52,8 +49,9 @@ if (isset($_SESSION['username'])) {
 </head>
 
 <body>
+    <?php include_once "page-top.php"; ?>
     <div class="our-events-pics">
-        <h2>Here Our Some Pictures of Successful Events by Our Top Planner</h2>
+        <!-- <h2>Here Our Some Pictures of Successful Events by Our Top Planner</h2> -->
         <div class="demo-event-pictures">
             <!-- <img src="event-demo-images/birthday-1.jpg" alt="">
             <img src="event-demo-images/birthday-2.jpg" alt="">
@@ -65,7 +63,7 @@ if (isset($_SESSION['username'])) {
         </div>
     </div>
     <div class="our-users-reviews">
-        <h3>Some Users Reviews</h3>
+        <h3>Some Users Reviews about ourself</h3>
         <ul>
             <li>
                 <p>
@@ -74,7 +72,7 @@ if (isset($_SESSION['username'])) {
                     excepturi culpa cum! Deserunt distinctio dolore ut ducimus illum quae in assumenda aut? Dolor
                     consectetur porro voluptas, dolores officia tempore quam!
 
-                    <blockquote>-Shakib</blockquote>
+                    <blockquote>-SSSSS</blockquote>
                 </p>
             </li>
 
@@ -83,7 +81,7 @@ if (isset($_SESSION['username'])) {
                     tenetur, ullam, porro temporibus dolores sit id corporis illo cumque possimus aliquid qui sunt nobis
                     quia repellendus perspiciatis obcaecati voluptas dolorem aperiam deleniti magni architecto? Odit
                     laboriosam aperiam reiciendis adipisci voluptatibus ipsum autem quae. Porro, nihil!
-                    <blockquote>-Shakib</blockquote>
+                    <blockquote>-RRRR</blockquote>
                 </p>
             </li>
         </ul>

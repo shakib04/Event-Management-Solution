@@ -10,9 +10,10 @@
         }
 
         .inter-linked-pages a {
-            padding: 15px;
+            padding: 10px;
             text-decoration: none;
             font-size: 18px;
+            display: inline-block;
         }
 
         a:hover {
