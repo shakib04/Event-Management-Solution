@@ -1,6 +1,6 @@
 <?php
 
-require_once "php-codes/session-code.php";
+require_once "common-codes/session-code.php";
 
 
 ?>
