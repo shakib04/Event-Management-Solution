@@ -1,23 +1,12 @@
 <?php
 
-require_once "common-codes/session-code.php";
-require_once "php-codes/database-conn.php";
+require_once "session-code.php";
+require_once "../model/database-conn.php";
+require_once "../controller/UserController.php";
 
-$sql = "SELECT * FROM `all_registered_users` WHERE type = 'user' and approved = 'no';";
-$newUnapprovedUser = getColumsValue($sql);
+$newUnapprovedUser = getAllUnApprovedUser();
 
-$allApproveUserSql = "SELECT * FROM `all_registered_users` WHERE type = 'user' and approved = 'yes';";
-$newApprovedUser = getColumsValue($allApproveUserSql);
-echo "<pre>";
-//print_r($newUnapprovedUser);
-echo "</pre>";
-
-if (isset($_GET['username']) and isset($_GET['approve'])) {
-    $updateApproveQuery = "UPDATE `all_registered_users` SET `approved` = '" . $_GET['approve'] . "' WHERE `all_registered_users`.`username` = '" . $_GET['username'] . "';";
-    execute($updateApproveQuery);
-    header("location:new-registered.php");
-}
-
+$newApprovedUser = getAllApprovedUser();
 
 ?>
 
@@ -50,7 +39,7 @@ if (isset($_GET['username']) and isset($_GET['approve'])) {
 </head>
 
 <body>
-    <?php include_once "common-codes/nav-bar.php" ?>
+    <?php include_once "nav-bar.php" ?>
     <div class="new-planner-list">
         <h2>New Registered Planners List</h2>
         <table>
@@ -115,15 +104,6 @@ if (isset($_GET['username']) and isset($_GET['approve'])) {
                 echo "</tr>";
             }
             ?>
-            <!-- <tr>
-                <td>sohan05</td>
-                <td>Unapproved</td>
-                <td>sohan05@gmail.com</td>
-                <td>Mirpur,Dhaka</td>
-                <td>016455445</td>
-                <td><a href="">Approve</a></td>
-                <td><a href="">Delete</a></td>
-            </tr> -->
         </table>
     </div>
 

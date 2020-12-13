@@ -1,31 +1,9 @@
 <?php
-require_once "php-codes/session-code.php";
-//require_once "top-log-out.php";
 
-require_once "php-codes/database-conn.php";
+require_once "session-code.php";
 
-require_once "php-codes/file-upload-validation.php";
-
-
-
-$sql = "SELECT * FROM `all_registered_users` where username = '" . $_SESSION['username'] . "'";
-echo "<pre>";
-//print_r(getColumsValue($sql));
-echo "</pre>";
-$columns = getColumsValue($sql);
-
-$fullname = $columns[0]['Full_Name'];
-$email = $columns[0]['email'];
-$type = $columns[0]['type'];
-$gender = $columns[0]['gender'];
-$contact = $columns[0]['phone_number'];
-$address = $columns[0]['full_address'];
-
-$sql = "SELECT profile_pic from `all_users_profile` where username =  '" . $_SESSION['username'] . "';";
-$columns = getColumsValue($sql);
-$profile_pic_address = $columns[0]['profile_pic'];
-
-
+require_once "../controller/file-upload-validation.php";
+require_once "../controller/ProfileController.php";
 
 ?>
 
@@ -67,13 +45,9 @@ $profile_pic_address = $columns[0]['profile_pic'];
 </head>
 
 <body>
-    <?php 
-    if (strtolower($_SESSION['type']) == "admin") {
-        include_once "common-codes/nav-bar.php";
-    }
+    <?php
+    include_once "nav-bar.php";
     ?>
-
-
 
     <div class="my-profile">
         <h2>My Profile Details</h2>

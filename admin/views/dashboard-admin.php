@@ -1,6 +1,6 @@
 <?php
 
-require_once "php-codes/session-code.php";
+require_once "session-code.php";
 
 
 ?>
@@ -76,7 +76,7 @@ require_once "php-codes/session-code.php";
 
 <body>
 
-    <?php include_once "common-codes/nav-bar.php" ?>
+    <?php include_once "nav-bar.php" ?>
 
     <div class="all-section">
         <h2>System Summery </h2>

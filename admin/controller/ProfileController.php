@@ -1,16 +1,13 @@
 <?php
 
-session_start();
+require_once "../model/database-conn.php";
 
 $err_fullname = $err_username = $err_password = $err_cfpassword = $err_email = $err_contact = $err_address = $err_gender = "";
 
 //$fullname = $email = $gender = $contact = $address = "";
 
-require_once "php-codes/database-conn.php";
+
 $sql = "SELECT * FROM `all_registered_users` where username = '" . $_SESSION['username'] . "'";
-echo "<pre>";
-//print_r(getColumsValue($sql));
-echo "</pre>";
 $columns = getColumsValue($sql);
 
 $fullname = $columns[0]['Full_Name'];
@@ -19,6 +16,7 @@ $type = $columns[0]['type'];
 $gender = $columns[0]['gender'];
 $contact = $columns[0]['phone_number'];
 $address = $columns[0]['full_address'];
+$profile_pic_address = $columns[0]['profile_pic'];
 
 
 
@@ -114,4 +112,16 @@ if (isset($_POST['submit'])) {
             echo "Failed to Save";
         }
     }
+}
+
+
+
+
+
+//show admin profile
+function profileDetais()
+{
+    $sql = "SELECT * FROM `all_registered_users` where username = '" . $_SESSION['username'] . "'";
+    $columns = getColumsValue($sql);
+    return $columns;
 }
