@@ -1,2 +1,2 @@
 <?php 
-header("location:dashboard-admin.php");
+header("location:views/dashboard-admin.php");

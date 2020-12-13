@@ -59,7 +59,7 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $login_username;
             $_SESSION['type'] = $type;
             if ($type == "admin") {
-                header("location:admin/dashboard-admin.php");
+                header("location:admin/index.php");
             } elseif ($type == "client" or $type == "user") {
                 header("location:user/");
             } elseif ($type == "vendor") {

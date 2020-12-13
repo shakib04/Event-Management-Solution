@@ -1,7 +1,7 @@
 <?php
 
-require_once "common-codes/session-code.php";
-require_once "validation/edit-profile-validation.php";
+require_once "session-code.php";
+require_once "../controller/ProfileController.php";
 
 
 echo "<pre>";

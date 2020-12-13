@@ -1,21 +1,7 @@
 <?php
-require_once "common-codes/session-code.php";
+require_once "session-code.php";
 
-require_once "validation/add-employee-validation.php";
-
-$data = simplexml_load_file("data.xml");
-$user = $data->user;
-
-foreach ($user as $user1) {
-    if ($user1->username == $_SESSION['username']) {
-        $type = $user1->type;
-        break;
-    }
-}
-
-if (strtolower($type) != "admin") {
-    header("location: dashboard-admin.php");
-}
+require_once "../controller/EmployeeController.php";
 
 ?>
 
@@ -49,7 +35,7 @@ if (strtolower($type) != "admin") {
 </head>
 
 <body>
-    <?php include_once "common-codes/nav-bar.php" ?>
+    <?php include_once "nav-bar.php" ?>
     <form action="" method="post" class="add-employee">
         <h2>Add New Employee </h2>
         <table>
@@ -82,7 +68,7 @@ if (strtolower($type) != "admin") {
             <tr>
                 <td>User Type</td>
                 <td>
-                    <select name="type" id="" style="width: 100%;">
+                    <select name="type" id="" style="width: 150px;">
                         <option value="Employee" selected>Employee</option>
                     </select> <?php echo $err_type; ?>
                 </td>
