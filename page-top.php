@@ -16,7 +16,7 @@
 
     <span class="login-reg">
         <a href="#login" class="login">Login</a>
-        <a href="#registration" class="reg">Sign up</a>
+        <a href="#reg-part" onclick="loadRegistration()" class="reg">Sign up</a>
     </span>
 </div>
 
