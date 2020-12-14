@@ -1,6 +1,6 @@
 <?php
 
-require_once "php-codes/database-conn.php";
+require_once "database-conn.php";
 
 // function validate($data)
 // {
@@ -202,14 +202,35 @@ if (isset($_POST['register'])) {
         //first check duplicate user 
 
         //create a templete
-        $sql = "INSERT INTO `all_registered_users` (`Full_Name`, `username`, `password`, gender, `type`, `approved`, `email`, `phone_number`, `full_address`) VALUES ('$fullname', '$username', '$password', '$gender', '$type', 'no', '$email', '$phoneNumber', '$address')";
-        $sql2 = "INSERT INTO `all_users_profile` (`username`, `birthdate`, `profile_pic`) VALUES ('$username', '2020-11-28', 'profiles/default-profile-pic.jpg');";
-        if (execute($sql) and execute($sql2)) {
+        $sql = "INSERT INTO `all_registered_users` (`Full_Name`, `username`, `password`, gender, `type`, `approved`, `email`, `phone_number`, `full_address`, profile_pic) VALUES ('$fullname', '$username', '$password', '$gender', '$type', 'no', '$email', '$phoneNumber', '$address')";
+        //$sql2 = "INSERT INTO `all_users_profile` (`username`, `birthdate`, `profile_pic`) VALUES ('$username', '2020-11-28', 'profiles/default-profile-pic.jpg');";
+        if (execute($sql)) {
             echo "Registration Success";
         } else {
             echo "Failed To Register";
         }
 
         //header("Location: login.php");
+    }
+}
+
+
+function checkUser($username)
+{
+    $sql = "select * from all_registered_users where username = '$username';";
+    $result = getColumsValue($sql);
+    if (count($result) > 0) {
+        return true;
+    }
+    return false;
+}
+
+if (isset($_GET['username'])) {
+    $getUsername = $_GET['username'];
+    if (checkUser($getUsername)) {
+        echo "<span style='color:red;'>Username is not Available</span>";
+    }
+    else{
+        echo "<span style='color:green;'>Username is valid</span>";
     }
 }

@@ -1,6 +1,5 @@
 <?php
-
-// echo "<h3> Hi,  " . $_SESSION['username'] . "</h3>";
+require_once "php-codes/session-code.php";
 
 
 ?>
@@ -106,7 +105,7 @@
     </div>
 
     <div id="reg-part">
-
+        <?php require_once "registration.php"; ?>
     </div>
 
 
@@ -120,12 +119,29 @@
     <script>
         function loadRegistration() {
             var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange =function () {  
+            xhr.onreadystatechange = function() {
                 if (this.status == 200 && this.readyState == 4) {
                     document.getElementById("reg-part").innerHTML = this.responseText;
                 }
             };
             xhr.open("GET", "registration.php", true);
+            xhr.send();
+        }
+
+
+        function checkDuplicateUser(usernameInput) {
+            //alert("dd");
+            var username = usernameInput.value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("duplicate-username").innerHTML = this.responseText;
+                    console.log(this.responseText);
+                }
+            };
+
+            xhr.open("GET", "php-codes/registration-validation.php?username=" + username, true);
             xhr.send();
         }
     </script>

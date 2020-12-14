@@ -10,7 +10,11 @@
 
              <tr>
                  <td>Username</td>
-                 <td><input type="text" value="<?php echo $username; ?>" name="username" id=""><?php echo $err_username; ?></td>
+                 <td>
+                     <input type="text" onfocusout="checkDuplicateUser(this)" value="<?php echo $username; ?>" name="username" id=""><?php echo $err_username; ?>
+                     <p id="duplicate-username"></p>
+                 </td>
+
              </tr>
 
              <tr>
@@ -74,4 +78,7 @@
              </tr>
          </table>
      </form>
+     <script>
+
+     </script>
  </div>
