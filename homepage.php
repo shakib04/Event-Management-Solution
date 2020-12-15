@@ -36,6 +36,11 @@ require_once "php-codes/session-code.php";
             border: 2px solid black;
             padding: 25px;
         }
+
+        .error-message{
+            color: red;
+            font-weight: 600;
+        }
     </style>
 </head>
 
