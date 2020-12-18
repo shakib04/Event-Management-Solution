@@ -1,0 +1,3 @@
+
+
+    var err_contact = getElement("erContact");

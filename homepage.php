@@ -37,7 +37,7 @@ require_once "php-codes/session-code.php";
             padding: 25px;
         }
 
-        .error-message{
+        .error-message {
             color: red;
             font-weight: 600;
         }
@@ -138,16 +138,20 @@ require_once "php-codes/session-code.php";
             //alert("dd");
             var username = usernameInput.value;
 
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("duplicate-username").innerHTML = this.responseText;
-                    console.log(this.responseText);
-                }
-            };
+            if (username.length >= 5 && username.length <= 10) {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("duplicate-username").innerHTML = this.responseText;
+                        console.log(this.responseText);
+                    }
+                };
 
-            xhr.open("GET", "php-codes/registration-validation.php?username=" + username, true);
-            xhr.send();
+                xhr.open("GET", "php-codes/registration-validation.php?username=" + username, true);
+                xhr.send();
+            } else {
+                document.getElementById("duplicate-username").innerHTML = '';
+            }
         }
     </script>
 </body>

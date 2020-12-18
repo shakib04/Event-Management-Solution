@@ -197,16 +197,16 @@ if (isset($_POST['register'])) {
 
     //echo $validCount;
 
-    if ($validCount == 9 && $newUser) {
+    if ($validCount == 9 && $newUser) { 
 
         //first check duplicate user 
 
         //create a templete
         $sql = "INSERT INTO `all_registered_users` (`Full_Name`, `username`, `password`, gender, `type`, `approved`, `email`, `phone_number`, `full_address`) VALUES ('$fullname', '$username', '$password', '$gender', '$type', 'no', '$email', '$phoneNumber', '$address')";
         if (execute($sql)) {
-            echo "Registration Success";
+            echo "<span class='succuess message-btn'>Registration Success</span>";
         } else {
-            echo "Failed To Register";
+            echo "<span class='failed message-btn'>Failed To Register</span>";
         }
 
         //header("Location: login.php");
@@ -230,6 +230,6 @@ if (isset($_GET['username'])) {
         echo "<span style='color:red;'>Username is not Available</span>";
     }
     else{
-        echo "<span style='color:green;'>Username is valid</span>";
+        echo "<span style='color:green;'>Username is Available</span>";
     }
 }
