@@ -227,7 +227,7 @@ function checkUser($username)
 if (isset($_GET['username'])) {
     $getUsername = $_GET['username'];
     if (checkUser($getUsername)) {
-        echo "<span style='color:red;'>Username is not Available</span>";
+        echo "<span style='color:red;'>Username is Taken</span>";
     }
     else{
         echo "<span style='color:green;'>Username is Available</span>";

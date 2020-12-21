@@ -75,7 +75,7 @@ function regValidation() {
         hasError = true;
         err_cfpassword.innerHTML = "Confirm Password does not match";
     }
-    
+
 
     //email validation
     if (isempty(email)) {
@@ -100,10 +100,13 @@ function regValidation() {
 
 
     //address
-     if (isempty(address)) {
-         hasError = true;
-         err_address.innerHTML = "This Field is Empty";
-     }
+    if (isempty(address)) {
+        hasError = true;
+        err_address.innerHTML = "This Field is Empty";
+    } else if (address.length > 200) {
+        hasError = true;
+        err_address.innerHTML = "Length of address is greater than 200";
+    }
 
     return !hasError;
 }
