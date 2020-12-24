@@ -6,11 +6,18 @@ $err_fullname = $err_username = $err_password = $err_cfpassword = $err_email = $
 
 //$fullname = $email = $gender = $contact = $address = "";
 
+// $columns = [];
 
-$sql = "SELECT * FROM `all_registered_users` where username = '" . $_SESSION['username'] . "'";
-$columns = getColumsValue($sql);
+// function getUserProfileDetails($username)
+// {
+//     global $columns;
+//     $sql = "SELECT * FROM `all_registered_users` where username = '" . $username . "'";
+//     $columns = getColumsValue($sql);
+// }
+
 
 $fullname = $columns[0]['Full_Name'];
+$username = $columns[0]['username'];
 $email = $columns[0]['email'];
 $type = $columns[0]['type'];
 $gender = $columns[0]['gender'];
@@ -105,9 +112,16 @@ if (isset($_POST['submit'])) {
     }
 
     if ($validCount == 5) {
-        $sql = "UPDATE `all_registered_users` SET `Full_Name` = '$fullname', `gender` = '$gender', `email` = '$email', `phone_number` = '$contact', `full_address` = '$address' WHERE `all_registered_users`.`username` = '" . $_SESSION['username'] . "';";
+        $sql = "UPDATE `all_registered_users` SET `Full_Name` = '$fullname', `gender` = '$gender', `email` = '$email', `phone_number` = '$contact', `full_address` = '$address' WHERE `all_registered_users`.`username` = '" . $username . "';";
         if (execute($sql)) {
-            header("location: profile.php");
+            if ($username == $_SESSION['username']) {
+                header("location: profile.php");
+            }elseif ($type == "planner") {
+                header("location:event-planners-list.php");
+            } elseif ($type == "user") {
+                header("location:client-users-list.php");
+            }
+            
         } else {
             echo "Failed to Save";
         }

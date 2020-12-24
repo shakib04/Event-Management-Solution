@@ -1,12 +1,17 @@
 <?php
 
 require_once "session-code.php";
+
+require_once "../controller/UserController.php";
+
+$columns = getUserDetails($_SESSION['username']);
 require_once "../controller/ProfileController.php";
 
 
 echo "<pre>";
 //print_r($admin);
 echo "</pre>";
+
 
 ?>
 

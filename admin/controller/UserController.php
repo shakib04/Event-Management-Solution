@@ -51,3 +51,10 @@ function getUserDetails($username)
     $allData = getColumsValue($sqlUserDetails);
     return $allData;
 }
+
+function getUserPurchaseDetails($username)
+{
+    $sqlPurchaseDetails = "SELECT * FROM all_registered_users aru,purchased_services_details psd, planner_services_list psl WHERE aru.username = psd.client_username and psd.service_id = psl.service_id and aru.username = '" . $username . "';";
+    $data = getColumsValue($sqlPurchaseDetails);
+    return $data;
+}

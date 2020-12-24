@@ -1,9 +1,14 @@
 <?php
 
 require_once "session-code.php";
-
 require_once "../controller/file-upload-validation.php";
+require_once "../controller/UserController.php";
+
+$columns = getUserDetails($_SESSION['username']);
 require_once "../controller/ProfileController.php";
+echo "<pre>";
+//print_r($columns);
+echo "</pre>";
 
 ?>
 

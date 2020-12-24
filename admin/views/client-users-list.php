@@ -87,7 +87,7 @@ $users = allUser();
                 foreach ($users as $user) {
                     echo '<div class="planner-card">';
 
-                    echo 'Username: <a href="">' . $user['username'] . '</a> <br>';
+                    echo 'Username: <a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] . '</a> <br>';
                     echo "Spent : 50,000 Taka <br>";
                     echo 'Event Completed: 1 <br>';
                     echo 'Rating: 0 <br>';
