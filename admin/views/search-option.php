@@ -11,6 +11,8 @@
 </style>
 
 <form action="">
-    <input type="text" placeholder="Search Here" class="search-user">
+    <input type="text" placeholder="Search Here" onkeyup="searchUser(this)" class="search-user">
     <input type="submit" value="Search" class="search-button">
 </form> <br>
+<div id="result"></div>
+<script src="js/live-search.js"></script>

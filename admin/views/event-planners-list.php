@@ -1,7 +1,9 @@
 <?php
 
 require_once "session-code.php";
-
+require_once "../controller/PlannerController.php";
+require_once "../model/database-conn.php";
+$users = allPlanner();
 
 ?>
 
@@ -43,17 +45,57 @@ require_once "session-code.php";
         .active-event-planner-list {
             background-color: aliceblue;
         }
+
+        .search-user {
+            width: 70%;
+            padding: 5px;
+        }
+
+        .search-button {
+            padding: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
     <?php include_once "nav-bar.php" ?>
 
+
     <div class="all-event-planner">
-        <?php include_once "search-option.php" ?>
+        <?php //include_once "search-option.php" 
+        ?>
+
+        <form action="">
+            <span id="type" style="visibility: hidden;">planner</span>
+            <input type="text" placeholder="Search Here" onkeyup="searchUser(this)" class="search-user">
+            <!-- <input type="submit" value="Search" class="search-button"> -->
+        </form> <br>
+
+        <script src="js/live-search.js"></script>
         <h2>Event Planners</h2>
-        <div class="planner-card">
-            
+        <div id="result">
+            <?php
+            if (count($users) > 0) {
+                //echo "<pre>";
+                //print_r($users);
+                //echo "</pre>";
+                foreach ($users as $user) {
+                    echo '<div class="planner-card">';
+
+                    echo 'Username: <a href="user-details.php?username='. $user['username'] .'">' . $user['username'] . '</a> <br>';
+                    echo "Earned : 50,000 Taka <br>";
+                    echo 'Event Completed: 1 <br>';
+                    echo 'Rating: 0 <br>';
+                    echo '<a href="">Edit</a> ';
+                    echo '<a href="">Delete</a>';
+                    echo '</div>';
+                }
+            }
+            ?>
+        </div>
+        <!-- <div class="planner-card">
+
             Username: <a href="">shakib001</a> <br>
             Earned : 150,000 Taka <br>
             Event Completed: 10 <br>
@@ -62,7 +104,7 @@ require_once "session-code.php";
             <a href="">Delete</a>
         </div>
         <div class="planner-card">
-            
+
             Username: <a href="">shakib001</a> <br>
             Earned : 150,000 Taka <br>
             Event Completed: 10 <br>
@@ -71,7 +113,7 @@ require_once "session-code.php";
             <a href="">Delete</a>
         </div>
         <div class="planner-card">
-            
+
             Username: <a href="">shakib001</a> <br>
             Earned : 150,000 Taka <br>
             Event Completed: 10 <br>
@@ -80,14 +122,14 @@ require_once "session-code.php";
             <a href="">Delete</a>
         </div>
         <div class="planner-card">
-            
+
             Username: <a href="">shakib001</a> <br>
             Earned : 150,000 Taka <br>
             Event Completed: 10 <br>
             Rating: 4.5 <br>
             <a href="">Edit</a>
             <a href="">Delete</a>
-        </div>
+        </div> -->
     </div>
 </body>
 
