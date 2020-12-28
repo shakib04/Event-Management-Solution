@@ -3,10 +3,14 @@
 require_once "session-code.php";
 require_once "../model/database-conn.php";
 require_once "../controller/UserController.php";
+require_once "../controller/PlannerController.php";
 
 $newUnapprovedUser = getAllUnApprovedUser();
 
 $newApprovedUser = getAllApprovedUser();
+
+$newUnApprovedPlanner = getAllUnApprovedPlanner();
+
 
 ?>
 
@@ -41,7 +45,7 @@ $newApprovedUser = getAllApprovedUser();
 <body>
     <?php include_once "nav-bar.php" ?>
     <div class="new-planner-list">
-        <h2>New Registered Planners List</h2>
+        <h2>New Registered <span style="background-color: #9b59b6; color:white ">Planners</span> List</h2>
         <table>
             <tr>
                 <th>username</th>
@@ -53,28 +57,26 @@ $newApprovedUser = getAllApprovedUser();
                 <th>Delete</th>
             </tr>
 
-            <tr>
-                <td>shakib001</td>
-                <td>Unapproved</td>
-                <td>shakib1@gmail.com</td>
-                <td>Uttara,Dhaka</td>
-                <td>013453434</td>
-                <td><a href="">Approve</a></td>
-                <td><a href="">Delete</a></td>
-            </tr>
-            <tr>
-                <td>sohan05</td>
-                <td>Unapproved</td>
-                <td>sohan05@gmail.com</td>
-                <td>Mirpur,Dhaka</td>
-                <td>016455445</td>
-                <td><a href="">Approve</a></td>
-                <td><a href="">Delete</a></td>
-            </tr>
+            <?php
+            foreach ($newUnApprovedPlanner as $user) {
+                echo "<tr>";
+
+                echo '<td> <a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] . '</a> </td>';
+                echo "<td>Unapproved</td>";
+                echo "<td>" . $user['email'] . "</td>";
+                echo "<td>" . $user['full_address'] . "</td>";
+                echo "<td>" . $user['phone_number'] . "</td>";
+                //echo "<td>" . $user['phone_number'] . "</td>";
+                echo "<td><a href='?username=" . $user['username'] . "&approve=yes'>Approve</a></td>";
+                echo "<td><a href=''>Delete</a></td>";
+
+                echo "</tr>";
+            }
+            ?>
         </table>
     </div>
     <div class="new-client-list">
-        <h2>New Registered Users(Client) List</h2>
+        <h2>New Registered <span style="background-color: #0984e3; color:white ">Users(Client)</span> List</h2>
         <table>
             <tr>
                 <th>username</th>
@@ -92,14 +94,14 @@ $newApprovedUser = getAllApprovedUser();
                 echo "<tr>";
 
 
-                echo "<td>" . $user['username'] . "</td>";
-                echo "<td>Unapproved</td>";
+                echo '<td> <a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] . '</a> </td>';
+                echo "<td style='color: red;'>Unapproved</td>";
                 echo "<td>" . $user['email'] . "</td>";
                 echo "<td>" . $user['full_address'] . "</td>";
                 echo "<td>" . $user['phone_number'] . "</td>";
                 //echo "<td>" . $user['phone_number'] . "</td>";
                 echo "<td><a href='?username=" . $user['username'] . "&approve=yes'>Approve</a></td>";
-                echo "<td><a href=''>Delete</a></td>";
+                echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="">Delete</a></td>';
 
                 echo "</tr>";
             }

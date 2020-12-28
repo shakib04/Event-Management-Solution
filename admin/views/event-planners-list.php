@@ -22,6 +22,7 @@ $users = allPlanner();
             width: 400px;
             float: left;
             margin: 9px;
+            line-height: 1.7;
         }
 
         .all-event-planner {
@@ -84,52 +85,18 @@ $users = allPlanner();
                     echo '<div class="planner-card">';
 
                     echo 'Username: <a href="user-details.php?username='. $user['username'] .'">' . $user['username'] . '</a> <br>';
+                    echo 'Balance:'. $user['balance'] . '<br>';
                     echo "Earned : 50,000 Taka <br>";
                     echo 'Event Completed: 1 <br>';
                     echo 'Rating: 0 <br>';
-                    echo '<a href="">Edit</a> ';
+                    echo '<a href="edit-user.php?username=' . $user['username'] . '">Edit</a> ';
                     echo '<a href="">Delete</a>';
                     echo '</div>';
                 }
             }
             ?>
         </div>
-        <!-- <div class="planner-card">
-
-            Username: <a href="">shakib001</a> <br>
-            Earned : 150,000 Taka <br>
-            Event Completed: 10 <br>
-            Rating: 4.5 <br>
-            <a href="">Edit</a>
-            <a href="">Delete</a>
-        </div>
-        <div class="planner-card">
-
-            Username: <a href="">shakib001</a> <br>
-            Earned : 150,000 Taka <br>
-            Event Completed: 10 <br>
-            Rating: 4.5<br>
-            <a href="">Edit</a>
-            <a href="">Delete</a>
-        </div>
-        <div class="planner-card">
-
-            Username: <a href="">shakib001</a> <br>
-            Earned : 150,000 Taka <br>
-            Event Completed: 10 <br>
-            Rating: 4.5 <br>
-            <a href="">Edit</a>
-            <a href="">Delete</a>
-        </div>
-        <div class="planner-card">
-
-            Username: <a href="">shakib001</a> <br>
-            Earned : 150,000 Taka <br>
-            Event Completed: 10 <br>
-            Rating: 4.5 <br>
-            <a href="">Edit</a>
-            <a href="">Delete</a>
-        </div> -->
+        
     </div>
 </body>
 

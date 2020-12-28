@@ -25,18 +25,27 @@ require_once "../controller/ProfileController.php";
 $type = $userData[0]['type'];
 require_once "nav-bar.php";
 ?>
-
-<form action="" method="POST">
+<style>
+    td>span {
+        color: red;
+        font-weight: 600;
+    }
+</style>
+<form action="" method="POST" onsubmit="return profileValidation()">
     <h4>Edit Profile of <?php echo $_GET['username']; ?></h4>
     <table>
         <tr>
             <td>Full Name</td>
-            <td><input type="text" name="fullname" id="" value="<?php echo $fullname; ?>"> <?php echo $err_fullname ?></td>
+            <td>
+                <input type="text" name="fullname" id="fullname" value="<?php echo $fullname; ?>"> <?php echo $err_fullname ?>
+                <span id="erName"></span>
+            </td>
         </tr>
         <tr>
             <td>Email</td>
             <td>
-                <input type="email" name="email" value="<?php echo $email; ?>" id=""> <?php echo $err_email ?>
+                <input type="text" name="email" value="<?php echo $email; ?>" id="email"> <?php echo $err_email ?>
+                <span id="erEmail"></span>
             </td>
         </tr>
         <tr>
@@ -50,14 +59,16 @@ require_once "nav-bar.php";
         <tr>
             <td>Phone Number</td>
             <td>
-                <input type="text" name="contact" id="" value="<?php echo $contact; ?>"> <?php echo $err_contact; ?>
+                <input type="text" name="contact" id="contact" value="<?php echo $contact; ?>"> <?php echo $err_contact; ?>
+                <span id="erContact"></span>
             </td>
         </tr>
 
         <tr>
             <td>Local Address</td>
             <td>
-                <textarea name="address" id=""> <?php echo $address; ?></textarea> <?php echo $err_address ?>
+                <textarea name="address" id="address"> <?php echo $address; ?></textarea> <?php echo $err_address ?>
+                <span id="erAddress"></span>
             </td>
         </tr>
 
@@ -68,3 +79,5 @@ require_once "nav-bar.php";
         </tr>
     </table>
 </form>
+
+<script src="js/edit-user-validation.js"></script>

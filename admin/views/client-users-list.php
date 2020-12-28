@@ -91,7 +91,7 @@ $users = allUser();
                     echo "Spent : 50,000 Taka <br>";
                     echo 'Event Completed: 1 <br>';
                     echo 'Rating: 0 <br>';
-                    echo '<a href="">Edit</a> ';
+                    echo '<a href="edit-user.php?username=' . $user['username'] . '">Edit</a> ';
                     echo '<a href="">Delete</a>';
                     echo '</div>';
                 }

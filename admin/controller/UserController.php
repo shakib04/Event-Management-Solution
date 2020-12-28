@@ -12,7 +12,7 @@ if (isset($_GET['username']) and isset($_GET['approve'])) {
 //get all unapproved user
 function getAllUnApprovedUser()
 {
-    $sql = "SELECT * FROM `all_registered_users` WHERE type = 'user' and approved = 'no';";
+    $sql = "SELECT * FROM `all_registered_users` WHERE type = 'user' and approved = 'no' ORDER BY `registration_date` DESC;";
     $newUnapprovedUser = getColumsValue($sql);
     return $newUnapprovedUser;
 }
