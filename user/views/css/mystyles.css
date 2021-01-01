@@ -17,7 +17,8 @@
         }
 
         .navigation a {
-            padding: 30px;
+            padding: 20px;
+            padding-top: 0px;
             color: whitesmoke;
 			 height: 35px;
         }
