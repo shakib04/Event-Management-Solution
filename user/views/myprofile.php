@@ -41,10 +41,12 @@
     </head>
     <body style="text-align:center;">
 	     <?php include "header.php";?>
+		 
 		 <div>
         <h2>My Profile Details</h2>
+		<form action=" " method="post" >  
         <table>
-         <form action=" " method="post" >  
+         
             <table class="center">
             <tr>
                 <td>Username:</td>
@@ -81,12 +83,29 @@
 
             <tr>
 
-                <td colspan="2"><a href="edit-profile.php">Edit Profile</a></td>
+                <td colspan="2"><button onclick="loadEditProfile()">Edit Profile </button></td>
             </tr>
+		
+			
            
         </table>
 		  </form>
-		    
+		  <div id="output">
+			
+			</div>
+			<script>
+			     function loadEditProfile() {
+                     var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                       if (this.readyState == 4 && this.status == 200) {
+                      document.getElementById("output").innerHTML = this.responseText;
+                      }
+                     };
+                    xhttp.open("GET", "myedit_profile.php", true);
+                    xhttp.send();
+                        }
+			</script>
+			
 			 
  
 	</body>

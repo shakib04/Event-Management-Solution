@@ -1,23 +1,32 @@
 <?php
     $username="";
 	$err_username="";
-    $fullname="";
-	$err_fullname="";
+    $Full_Name="";
+	$err_Full_Name="";
     $email="";
     $err_email="";
-	$phone="";
-	$err_phone="";
-	$address="";
-	$err_address="";
+	$phone_number="";
+	$err_phone_number="";
+	$full_address="";
+	$err_full_address="";
 	$countValid= 0;
 	
 	if(isset($_POST["OK"])){
         //FULL NAME VALIDATION
-        if(empty($_POST["fullname"])){
-			$err_fullname="Full Name Required";	
+        if(empty($_POST["Full_Name"])){
+			$err_Full_Name="Full Name Required";	
 		}
 		else{
-			$fullname = htmlspecialchars($_POST["fullname"]);
+			$Full_Name = htmlspecialchars($_POST["Full_Name"]);
+			$countValid++;
+        }
+		//User name validation
+		if(empty($_POST["username"])){
+			$err_username="Username Required";
+				
+		}
+		else{
+			$username = htmlspecialchars($_POST["username"]);
 			$countValid++;
         }
         
@@ -41,50 +50,31 @@
           
         }
 		
+		
 	//phone validation	
-    if (empty(trim($_POST['phone']))) {
-        $err_phone = "<span style='color:red;'> Phone Number is Required </span>";
-    } elseif (!is_numeric($_POST['phone'])) {
-        $err_phone = "<span style='color:red;'> Number is not valid (only numeric) </span>";
-    } elseif (strpos($_POST['phone'], " ")) {
-        $err_phone = "<span style='color:red;'> Space is not Allowed </span>";
+    if (empty(trim($_POST["phone_number"]))) {
+        $err_phone_number = "<span style='color:red;'> Phone Number is Required </span>";
+    } elseif (!is_numeric($_POST["phone_number"])) {
+        $err_phone_number = "<span style='color:red;'> Number is not valid (only numeric) </span>";
+    } elseif (strpos($_POST["phone_number"], " ")) {
+        $err_phone_number = "<span style='color:red;'> Space is not Allowed </span>";
     } else {
-        $phone = htmlspecialchars($_POST["phone"]);
+        $phone_number = htmlspecialchars($_POST["phone_number"]);
         $CountValid++;
     }
 	
     //address validation 
 
-    if (empty(trim($_POST['address']))) {
-        $err_address = "<span style='color:red;'> Address is Required </span>";
+    if (empty(trim($_POST["full_address"]))) {
+        $err_full_address = "<span style='color:red;'> Address is Required </span>";
     } else {
-        $address = htmlspecialchars($_POST['address']);
+        $full_address = htmlspecialchars($_POST["full_address"]);
          $CountValid++;
     }
 	}
         
         
-		if($countValid==4){
-			$users = simplexml_load_file("data.xml");
-			
-            $user = $users->addChild("user");
-            $user->addChild("fullname",$fullname);
-			$user->addChild("username",$username);
-            $user->addChild("email",$email);
-			$user->addChild("email",$phone);
-			$user->addChild("email",$address);
-			echo "<pre>";
-			print_r($users);
-			echo "</pre>";
-            
-            
-			$xml = new DOMDocument("1.0");
-			$xml->preserveWhiteSpace=false;
-			$xml->formatOutput= true;
-			$xml->loadXML($users->asXML());
-			
-			$file = fopen("data.xml","w");
-			fwrite($file,$xml->saveXML());
+		if($countValid==5){
 			
 			
 		}

@@ -40,38 +40,39 @@
 		   
     </head>
     <body style="text-align:center;">
-	     <?php include "header.php";?>
+	 
 		 <div>
         <h2>Edit My Profile Details</h2>
+		 <form action="" method="post" >  
         <table>
-         <form action=" " method="post" >  
+        
             <table class="center">
             <tr>
                 <td>Username:</td>
-                <td><input type="text" value="<?php echo $_SESSION['username'];?>" placeholder="Username" name="username"></td>
-                <td><span style="color:red;">*<?php echo $err_username;?></span></td>
+                <td><input type="text" value="<?php echo $username;?>" placeholder="Username" name="username"><span style="color:red;">*<?php echo $err_username;?></span></td>
+                
             </tr>
             <tr>
                 <td>Full Name:</td>
-                <td><input type="text" value="<?php echo $fullname?>" placeholder="Fullname" name="fullname"></td>
-                 <td><span style="color:red;">*<?php echo $err_fullname;?></span></td>
+                <td><input type="text" value="<?php echo $Full_Name?>" placeholder="Fullname" name="fullname"><span style="color:red;">*<?php echo $err_Full_Name;?></span></td>
+                 
             </tr>
             <tr>
                 <td>Email:</td>
-                <td><input type="text" value="<?php echo $email?>" placeholder="Email" name="email"></td>
-                <td><span style="color:red;">*<?php echo $err_email;?></span></td>
+                <td><input type="text" value="<?php echo $email?>" placeholder="Email" name="email"><span style="color:red;">*<?php echo $err_email;?></span></td>
+                
             </tr>
 
             <tr>
                 <td>Phone Number:</td>
-                 <td><input type="text" value="<?php echo $phone?>"placeholder="Phone Number" name="phone"></td>
-                <td><span style="color:red;">*<?php echo $err_phone;?></span></td>
+                 <td><input type="text" value="<?php echo $phone_number?>"placeholder="Phone Number" name="phone"><span style="color:red;">*<?php echo $err_phone_number;?></span></td>
+               
             </tr>
 
             <tr>
                 <td>Address</td>
-                 <td><input type="text" value="<?php echo $address?>" placeholder="Address" name="address"></td>
-                <td><span style="color:red;">*<?php echo $err_address;?></span></td>
+                 <td><input type="text" value="<?php echo $full_address?>" placeholder="Address" name="address"><span style="color:red;">*<?php echo $err_full_address;?></span></td>
+                
             </tr>
 			
             <tr>

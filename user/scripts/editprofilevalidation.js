@@ -6,30 +6,30 @@ function doEditProfileValidation(){
     refreshEditProfile();
     var hasError=false;
 	var username=getElement("username");
-    var fullname=getElement("fullname");
+    var Full_Name=getElement("Full_Name");
     var email=getElement("email");
-    var phone=getElement("phone");
-	var address=getElement("address");
+    var phone_number=getElement("phone_number");
+	var full_address=getElement("full_address");
     var err_username=getElement("err_username");
-	var err_fullname=getElement("err_fullname");
+	var err_Full_Name=getElement("err_Full_Name");
     var err_email=getElement("err_email");
-    var err_phone=getElement("err_phone");
-	var err_address=getElement("err_address");
+    var err_phone_number=getElement("err_phone_number");
+	var err_full_address=getElement("err_full_address");
 	
 	if(username.value==""){
         hasError=true;
         err_username.innerHTML="*UserName Required";
         err_username.focus();
     }
-    if(fullname.value==""){
+    if(Full_Name.value==""){
         hasError=true;
-        err_fullname.innerHTML="*FullName Required";
-        err_fullname.focus();
+        err_Full_Name.innerHTML="*FullName Required";
+        err_Full_Name.focus();
     }
-    else if(fullname.search("1")!=-1 && fullname.search("2")!=-1 && fullname.search("3")!=-1 && fullname.search("4")!=-1 && fullname.search("5")!=-1 && fullname.search("6")!=-1 && fullname.search("7")!=-1 && fullname.search("8")!=-1 && fullname.search("9")!=-1 && fullname.search("0")!=-1){
+    else if(Full_Name.search("1")!=-1 && Full_Name.search("2")!=-1 && Full_Name.search("3")!=-1 && Full_Name.search("4")!=-1 && Full_Name.search("5")!=-1 && Full_Name.search("6")!=-1 && Full_Name.search("7")!=-1 && Full_Name.search("8")!=-1 && Full_Name.search("9")!=-1 && Full_Name.search("0")!=-1){
         hasError=true;
-        err_fullname.innerHTML="*FullName Cannot Contain Numbers";
-        err_fullname.focus();
+        err_Full_Name.innerHTML="*FullName Cannot Contain Numbers";
+        err_Full_Name.focus();
     }
     if(email.value==""){
         hasError=true;
@@ -41,21 +41,21 @@ function doEditProfileValidation(){
         err_email.innerHTML="*Invalid Email";
         err_email.focus();
     }
-    if(phone.value==""){
+    if(phone_number.value==""){
         hasError=true;
-        err_phone.innerHTML="*Phone Required";
-        err_phone.focus();
+        err_phone_number.innerHTML="*Phone Required";
+        err_phone_number.focus();
     }
-    else if(phone.length!=11){
+    else if(phone_number.length!=11){
         hasError=true;
-        err_phone.innerHTML="*Invalid Phone";
-        err_phone.focus();
+        err_phone_number.innerHTML="*Invalid Phone";
+        err_phone_number.focus();
     }
 	
-	if(address.value==""){
+	if(full_address.value==""){
         hasError=true;
-        err_address.innerHTML="*Address Required";
-        err_address.focus();
+        err_full_address.innerHTML="*Address Required";
+        err_full_address.focus();
     }
     return !hasError;
 }
@@ -63,13 +63,13 @@ function doEditProfileValidation(){
 
 function refreshEditProfile(){
 	var err_username = getElement("err_username");
-	var err_fullname = getElement("err_fullname");
+	var err_Full_Name = getElement("err_Full_Name");
     var err_email = getElement("err_email");
-    var err_phone = getElement("err_phone");
-	var err_address= getElement("err_address");
+    var err_phone_number = getElement("err_phone_number");
+	var err_full_address= getElement("err_full_address");
 	err_username.innerHTML = "";
-	err_fullname.innerHTML = "";
+	err_Full_Name.innerHTML = "";
 	err_email.innerHTML = "";
-    err_phone.innerHTML = "";
-	err_address.innerHTML = "";
+    err_phone_number.innerHTML = "";
+	err_full_address.innerHTML = "";
 }

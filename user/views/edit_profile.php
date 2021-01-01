@@ -39,11 +39,12 @@
 		   
     </head>
     <body style="text-align:center;">
-	     <?php include "header.php";?>
+	 
 		 <div>
         <h2>Edit My Profile Details</h2>
+		<form action="" method="post" onsubmit="return doEditProfileValidation()">  
         <table>
-         <form action="" method="post" onsubmit="return doEditProfileValidation()">  
+         
             <table class="center">
             <tr>
                 <td>Username:</td>
@@ -51,7 +52,7 @@
             </tr>
             <tr>
                 <td>Full Name:</td>
-                <td><input type="text" id="fullname" placeholder="Fullname" name="fullname"><span id="err_fullname" style="color:red;">*</span><br></td>
+                <td><input type="text" id="Full_Name" placeholder="Fullname" name="Full_Name"><span id="err_Full_Name" style="color:red;">*</span><br></td>
             </tr>
             <tr>
                 <td>Email:</td>
@@ -60,12 +61,12 @@
 
             <tr>
                 <td>Phone Number:</td>
-                <td><input type="number" id="phone" placeholder="Phone" name="phone"><span id="err_phone" style="color:red;">*</span><br></td>
+                <td><input type="number" id="phone_number" placeholder="Phone" name="phone_number"><span id="err_phone_number" style="color:red;">*</span><br></td>
             </tr>
 
             <tr>
                 <td>Address</td>
-                <td><input type="text" id="address" placeholder="Address" name="address"><span id="err_address" style="color:red;">*</span><br></td>
+                <td><input type="text" id="full_address" placeholder="Address" name="full_address"><span id="err_full_address" style="color:red;">*</span><br></td>
             </tr>
 			
             <tr>
