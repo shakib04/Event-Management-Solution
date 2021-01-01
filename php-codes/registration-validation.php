@@ -66,11 +66,17 @@ if (isset($_POST['register'])) {
         $err_password = "<span style='color:red;'> Password is Required </span>";
     } elseif (strlen($_POST['password']) < 8) {
         $err_password = "<span style='color:red;'>Password must contain at least 8 character </span>";
-    } elseif (!strpos($_POST['password'], "#")) {
-        $err_password = "<span style='color:red;'>Password must contain 1 special character # </span>";
-    } elseif (!strpos($_POST['password'], "1")) {
-        $err_password = "<span style='color:red;'>Password must contain 1 number  </span>";
-    } elseif (ctype_upper($_POST['password'])) {
+    } elseif (strlen($_POST['password']) > 32) {
+        $err_password = "<span style='color:red;'>Password must contain less than 32 character </span>";
+    }
+    //elseif (!strpos($_POST['password'], "#")) {
+    //     $err_password = "<span style='color:red;'>Password must contain 1 special character # </span>";
+    // } 
+    // elseif (!strpos($_POST['password'], "1")) {
+    //     $err_password = "<span style='color:red;'>Password must contain 1 number  </span>";
+    // } 
+
+    elseif (ctype_upper($_POST['password'])) {
         $err_password = "<span style='color:red;'>Password must contain 1 Lowercase  </span>";
     } elseif (ctype_lower($_POST['password'])) {
         $err_password = "<span style='color:red;'>Password must contain 1 Uppercase  </span>";

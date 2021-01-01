@@ -65,6 +65,15 @@ function regValidation() {
     } else if (password.length <= 7) {
         hasError = true;
         err_password.innerHTML = "Password must be 8 characters long";
+    } else if (password.length > 32) {
+        hasError = true;
+        err_password.innerHTML = "Password must be less than 32 characters";
+    } else if (password == password.toUpperCase()) {
+        hasError = true;
+        err_password.innerHTML = "Password must be 1 LowerCase character";
+    } else if (password == password.toLowerCase()) {
+        hasError = true;
+        err_password.innerHTML = "Password must be 1 Uppercase character";
     }
 
     //confirm password validation
