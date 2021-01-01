@@ -7,7 +7,7 @@
   
   </head>
   <body>
-     <?php include "header.php";?>
+  <?php include "mypagehead.php";?>
   
   
   </body>

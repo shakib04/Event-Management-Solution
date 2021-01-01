@@ -33,7 +33,7 @@
 		   
     </head>
     <body>
-	     <?php include "header.php";?>
+    <?php include "mypagehead.php";?>
 		 <center>
 		 <div class="container">
           <img src="images/download.jpg" alt="Wedding" style="width:500%;">

@@ -34,7 +34,7 @@
 	
 	</head>
     <body>
-	     <?php include "header.php";?>
+    <?php include "mypagehead.php";?>
 		 <form action=" " method="post" >  
    <center>
 		 <div class="container">

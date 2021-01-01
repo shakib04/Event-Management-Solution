@@ -71,7 +71,7 @@
 </style>	   
     </head>
     <body>
-	     <?php include "header.php";?>
+	     <?php include "mypagehead.php";?>
 		  <form action="" method="post" onsubmit="return doBookEventValidation()">  
 	    <center>
 		 <div class="container">

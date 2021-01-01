@@ -37,7 +37,7 @@
 		   
     </head>
     <body style="text-align:center;">
-	     <?php include "header.php";?>
+    <?php include "mypagehead.php";?>
 		 
 		 <div>
         <h2>My Profile Details</h2>

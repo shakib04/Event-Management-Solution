@@ -31,7 +31,7 @@
 </style>	   
     </head>
     <body>
-	     <?php include "header.php";?>
+    <?php include "mypagehead.php";?>
 	    <center>
 		 <div class="container">
           <img src="images/web1.jpg" alt="Wedding" style="width:100%;">
