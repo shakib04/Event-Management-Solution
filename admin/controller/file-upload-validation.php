@@ -1,7 +1,7 @@
 
-
-
 <?php
+
+require_once "../model/database-conn.php";
 
 //profile-pic validation
 $err_Profile_Pic = "";
@@ -31,7 +31,7 @@ if (isset($_POST['save-pro-pic'])) {
 
 
         if (move_uploaded_file($file_tmp_name, $target_file)) {
-            echo $query = "update all_registered_users set profile_pic = '$target_file' where username = '" . $_SESSION['username'] . "';";
+            $query = "update all_registered_users set profile_pic = '$target_file' where username = '" . $_SESSION['username'] . "';";
             if (execute($query)) {
                 $err_Profile_Pic = "<span style='color:green; font-weight:bold;'>Succussfully Upload </span>";
             } else {

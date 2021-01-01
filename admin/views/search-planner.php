@@ -11,23 +11,24 @@ if (isset($_GET['name'])) {
         //echo "</pre>";
         
         foreach ($users as $user) {
-            $totalEarning = getTotalEarning($_GET['name']);
-            echo "<pre>";
-            print_r($totalEarning[0]);
-            echo "</pre>";
+            
             
             echo '<div class="planner-card">';
 
             echo 'Username: <a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] . '</a> <br>';
+            echo 'Full Name:' . $user['Full_Name'] . '<br>';
             echo 'Balance:' . $user['balance'] . '<br>';
+            echo 'Email:' . $user['email'] . '<br>';
+            echo 'Phone Number:' . $user['phone_number'] . '<br>';
+            echo 'Address:' . $user['full_address'] . '<br>';
 
-            if (count($totalEarning) == 0) {
-                echo "Total Earning: 0.00 Taka";
-            } else {
-                echo "Total Earning:" . $totalEarning['totalEarning'] . "Taka";
-            }
-            echo 'Event Completed: 1 <br>';
-            echo 'Rating: 0 <br>';
+            // if (count($totalEarning) == 0) {
+            //     echo "Total Earning: 0.00 Taka";
+            // } else {
+            //     echo "Total Earning:" . $totalEarning['totalEarning'] . "Taka";
+            // }
+            //echo 'Event Completed: 1 <br>';
+            //echo 'Rating: 0 <br>';
             echo '<a href="edit-user.php?username=' . $user['username'] . '">Edit</a> ';
             echo '<a href="">Delete</a>';
             echo '</div>';

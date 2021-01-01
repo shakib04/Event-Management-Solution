@@ -53,7 +53,7 @@
         <a href="client-users-list.php" class="active-client">List of Client Type User</a>
         <a href="event-planners-list.php" class="active-event-planner-list">All Event Planners</a>
         <a href="profile.php" class="active-my-profile">Profile</a>
-        <a href="add-employee.php" class="active-add-new-employee">Add New Employee</a>
+        <a href="service-list.php" class="active-add-new-employee">Service List</a>
     </div>
 
 </body>

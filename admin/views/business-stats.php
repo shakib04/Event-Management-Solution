@@ -1,6 +1,7 @@
 <?php
 
 require_once "session-code.php";
+require_once "../controller/BusinessController.php";
 
 ?>
 
@@ -36,6 +37,8 @@ require_once "session-code.php";
 
         .active-my-business {
             background-color: aliceblue;
+        } h2{
+            margin: 10px;
         }
     </style>
 </head>
@@ -45,6 +48,25 @@ require_once "session-code.php";
     <?php include_once "nav-bar.php" ?>
 
     <div class="business-stats">
+        <div class="payment-info">
+            <h2>Total Paid Payment</h2>
+            <?php
+            $paidAmountSum = getPaidAmountSum();
+
+            echo "<p>=" . $paidAmountSum[0]['paidAmountSum'] . " Taka</p>"
+            ?>
+            <h2>Total Unpaid Payment</h2>
+            <?php
+            $unpaidAmountSum = getUnPaidAmountSum();
+            echo "<p>=" . $unpaidAmountSum[0]['unpaidAmountSum'] . " Taka</p>"
+            ?>
+            <h2>Total Paid And Unpaid Payment</h2>
+            <?php
+            $amountSum = getAmountSum();
+            
+            echo "<p>=" . $amountSum[0]['amountSum'] . " Taka</p>"
+            ?>
+        </div>
         <h3>My Business Statistics</h3>
         <table>
             <tr>

@@ -24,6 +24,7 @@ $users = allUser();
             width: 400px;
             float: left;
             margin: 9px;
+            line-height: 1.7;
         }
 
         .all-event-planner {
@@ -88,9 +89,14 @@ $users = allUser();
                     echo '<div class="planner-card">';
 
                     echo 'Username: <a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] . '</a> <br>';
-                    echo "Spent : 50,000 Taka <br>";
-                    echo 'Event Completed: 1 <br>';
-                    echo 'Rating: 0 <br>';
+                    echo 'Full Name:' . $user['Full_Name'] . '<br>';
+                    echo 'Balance:' . $user['balance'] . '<br>';
+                    echo 'Email:' . $user['email'] . '<br>';
+                    echo 'Phone Number:' . $user['phone_number'] . '<br>';
+                    echo 'Address:' . $user['full_address'] . '<br>';
+                    //echo "Spent : 50,000 Taka <br>";
+                    //echo 'Event Completed: 1 <br>';
+                    //echo 'Rating: 0 <br>';
                     echo '<a href="edit-user.php?username=' . $user['username'] . '">Edit</a> ';
                     echo '<a href="">Delete</a>';
                     echo '</div>';

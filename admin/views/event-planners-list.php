@@ -85,10 +85,15 @@ $users = allPlanner();
                     echo '<div class="planner-card">';
 
                     echo 'Username: <a href="user-details.php?username='. $user['username'] .'">' . $user['username'] . '</a> <br>';
+                    echo 'Full Name:' . $user['Full_Name'] . '<br>';
                     echo 'Balance:'. $user['balance'] . '<br>';
-                    echo "Earned : 50,000 Taka <br>";
-                    echo 'Event Completed: 1 <br>';
-                    echo 'Rating: 0 <br>';
+                    echo 'Email:' . $user['email'] . '<br>';
+                    echo 'Phone Number:' . $user['phone_number'] . '<br>';
+                    echo 'Address:' . $user['full_address'] . '<br>';
+                    
+                    //echo "Earned : 50,000 Taka <br>";
+                    //echo 'Event Completed: 1 <br>';
+                    //echo 'Rating: 0 <br>';
                     echo '<a href="edit-user.php?username=' . $user['username'] . '">Edit</a> ';
                     echo '<a href="">Delete</a>';
                     echo '</div>';
