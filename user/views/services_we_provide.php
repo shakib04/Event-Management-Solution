@@ -1,6 +1,6 @@
   
 <?php
-    if(!isset($_COOKIE["uname"])){
+    if(!isset($_COOKIE["username"])){
 		header("Location: login.php");
 	}
 ?>
@@ -17,7 +17,7 @@
              <table>
 			   
             <div class="container">
-             <img src="web1.jpg" alt="Background picture" style="width:100%;">
+             <img src="images/web1.jpg" alt="Background picture" style="width:100%;">
               <div class="content">
               <p style="font-size:20px;font-style: italic;">Service WE Provide</p>
               <p style="font-size:20px;font-style: italic;">A directory of complete wedding,bithday & event</p>

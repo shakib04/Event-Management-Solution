@@ -2,7 +2,7 @@
     $uname="root";
     $server="localhost";
     $pass="";
-    $db_name="p_inventory";
+    $db_name="web-tech-project-db";
 
     function execute($query){
         global $uname, $server, $pass, $db_name;

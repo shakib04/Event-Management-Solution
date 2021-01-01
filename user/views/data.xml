@@ -2,7 +2,7 @@
 <users>
   <user>
     <fname>Bithi</fname>
-    <uname>era123</uname>
+    <username>era123</username>
     <pass>eranira123*#</pass>
     <gender>Female</gender>
     <email>eranira@gmail.com</email>
@@ -16,21 +16,21 @@
   </user>
   <user>
     <fname>era</fname>
-    <uname>niraera123</uname>
+    <username>niraera123</username>
     <pass>eranira1#?</pass>
     <gender>Female</gender>
     <email>era@gmail.com</email>
   </user>
   <user>
     <fname>abcd</fname>
-    <uname>abcd123</uname>
+    <username>abcd123</username>
     <pass>abcd123?#</pass>
     <gender>Female</gender>
     <email>abcd@gmail.com</email>
   </user>
   <user>
     <fname>bithi</fname>
-    <uname>bithi123</uname>
+    <username>bithi123</username>
     <pass>bithi123#?</pass>
     <gender>Female</gender>
     <email>bithi@gmail.com</email>
@@ -48,5 +48,12 @@
     <pass>eranira1#?</pass>
     <gender>Female</gender>
     <email>farjanaislambithi89@gmail.com</email>
+  </user>
+  <user>
+    <fname>kajol Rekha</fname>
+    <username>kajol123</username>
+    <pass>kajol123*#</pass>
+    <gender>Female</gender>
+    <email>kajol@gmail.com</email>
   </user>
 </users>

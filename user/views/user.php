@@ -1,6 +1,5 @@
-  
-<?php
-    if(!isset($_COOKIE["uname"])){
+  <?php
+    if(!isset($_COOKIE["username"])){
 		header("Location: login.php");
 	}
 ?> 
@@ -9,7 +8,7 @@
 <head>
     
     <title>USER</title>
-    <link rel="stylesheet" type="text/css" href="mystyles.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyles.css">
     
 </head>
 
@@ -23,12 +22,13 @@
         
         <div class="navigation grid-item">
 		    <a href="user.php">Home</a>
-            <a href="Price_package.php">Price & package </a>
+            <a href="book_event.php">Book an Event</a>
             <a href="Event.php">Event set design </a>
-			<a href="order.php">Order </a>
+			<a href="myorder.php">Order </a>
             <a href="our_clients.php">Our clients </a>
             <a href="services_we_provide.php">services we provide </a>
             <a href="profile.php">My Profile</a>
+			
 			
         </div>
         <div class="search-bar ">
@@ -84,7 +84,7 @@
          <!-- Photo Grid -->
         <div class="row"> 
         <div class="column">
-        <img src="web1.jpg" style="width:100%">
+        <img src="images/web1.jpg" style="width:100%">
        
         </div>
 		

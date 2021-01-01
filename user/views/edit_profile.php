@@ -1,30 +1,24 @@
+  
 <?php
+    if(!isset($_COOKIE["username"])){
+		header("Location:login.php");
+	}
+?> 
 
-require_once "common-codes/session-code.php";
-require_once "validation/edit-profile-validation.php";
 
 
-echo "<pre>";
-//print_r($admin);
-echo "</pre>";
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
-
-    <style>
+<html>
+    <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Profile</title>
+		<style>
         table,
         th,
         td {
             border: 1px solid black;
             border-collapse: collapse;
             padding: 15px;
+			text-align: center;
         }
 
         tr:nth-child(odd) {
@@ -35,57 +29,59 @@ echo "</pre>";
             background-color: whitesmoke;
         }
 
-        form {
-            margin: 30px auto;
-            width: 800px;
-        }
+		table.center {
+            margin-left: auto; 
+            margin-right:  auto;
+}
+        body {text-align:center;}
+		
     </style>
-</head>
-
-<body>
-    <a href="my-profile.php">Go Back to My Profile</a>
-    <form action="" method="POST">
-        <h4>Edit Profile of <?php echo $_SESSION['username']; ?></h4>
+		   
+    </head>
+    <body style="text-align:center;">
+	     <?php include "header.php";?>
+		 <div>
+        <h2>Edit My Profile Details</h2>
         <table>
+         <form action="" method="post" onsubmit="return doEditProfileValidation()">  
+            <table class="center">
             <tr>
-                <td>Full Name</td>
-                <td><input type="text" name="fullname" id="" value="<?php echo $fullname; ?>"> <?php echo $err_fullname ?></td>
+                <td>Username:</td>
+                <td><input type="text" id="username" placeholder="Username" name="username"><span id="err_username" style="color:red;">*</span><br></td>
             </tr>
             <tr>
-                <td>Email</td>
-                <td>
-                    <input type="email" name="email" value="<?php echo $email; ?>" id=""> <?php echo $err_email ?>
-                </td>
+                <td>Full Name:</td>
+                <td><input type="text" id="fullname" placeholder="Fullname" name="fullname"><span id="err_fullname" style="color:red;">*</span><br></td>
             </tr>
             <tr>
-                <td>Gender <?php echo $err_gender ?></td>
-                <td>
-                    <input type="radio" name="gender" id="" value="Male" checked> Male
-                    <input type="radio" name="gender" id="" value="Female"> Female
-                </td>
+                <td>Email:</td>
+                <td><input type="text" id="email" placeholder="Email" name="email"><span id="err_email" style="color:red;">*</span><br></td>
             </tr>
 
             <tr>
-                <td>Phone Number</td>
-                <td>
-                    <input type="text" name="contact" id="" value="<?php echo $contact; ?>"> <?php echo $err_contact; ?>
-                </td>
+                <td>Phone Number:</td>
+                <td><input type="number" id="phone" placeholder="Phone" name="phone"><span id="err_phone" style="color:red;">*</span><br></td>
             </tr>
 
             <tr>
-                <td>Local Address</td>
-                <td>
-                    <textarea name="address" id=""> <?php echo $address; ?></textarea> <?php echo $err_address ?>
-                </td>
+                <td>Address</td>
+                <td><input type="text" id="address" placeholder="Address" name="address"><span id="err_address" style="color:red;">*</span><br></td>
             </tr>
-
+			
             <tr>
-                <td colspan="2">
-                    <input type="submit" name="submit" value="Save">
-                </td>
+
+                <td colspan="2"><input type="submit" name="OK" value="OK"></td>
             </tr>
+			 <tr>
+
+                <td colspan="2"><a href="profile.php">Back</a></td>
+            </tr>
+           
+           
         </table>
-    </form>
-</body>
-
+		  </form>
+		    
+			 <script src="../scripts/editprofilevalidation.js"></script>
+ 
+	</body>
 </html>

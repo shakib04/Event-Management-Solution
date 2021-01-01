@@ -1,4 +1,4 @@
-<?php include_once "php_codes/Registration_validation.php" ;?>
+<?php include_once "../controllers/php_codes/Registration_validation.php" ;?>
 <html>
     <head>
         <title>Registration</title>
@@ -31,8 +31,8 @@
                     </tr>
                     <tr>
                         <td align="left">User Name:</td>
-                        <td align="left"><input type="text" value="<?php echo $uname?>" name="uname"></td>
-                        <td align="left"><span style="color:red;">*<?php echo $err_uname;?></span></td>
+                        <td align="left"><input type="text" value="<?php echo $username?>" name="username"></td>
+                        <td align="left"><span style="color:red;">*<?php echo $err_username;?></span></td>
                     </tr>
                     <tr>
                         <td align="left">Password:</td>

@@ -1,6 +1,6 @@
   
 <?php
-    if(!isset($_COOKIE["uname"])){
+    if(!isset($_COOKIE["username"])){
 		header("Location: login.php");
 	}
 ?> 
@@ -34,7 +34,7 @@
 	     <?php include "header.php";?>
 		 <center>
 		 <div class="container">
-          <img src="web1.jpg" alt="Wedding" style="width:100%;">
+          <img src="images/web1.jpg" alt="Wedding" style="width:100%;">
          <div class="text-block">
          <h4>Our Clients :::</h4>
          <p>A  Royal Wedding Planning of Anik & Maisha</p>

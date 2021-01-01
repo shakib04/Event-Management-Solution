@@ -1,5 +1,5 @@
   <?php
-    if(!isset($_COOKIE["uname"])){
+    if(!isset($_COOKIE["username"])){
 		header("Location: login.php");
 	}
 ?>
@@ -7,7 +7,7 @@
 <head>
     
     <title>USER</title>
-    <link rel="stylesheet" type="text/css" href="mystyles.css">
+    <link rel="stylesheet" type="text/css" href="css/mystyles.css">
     
 </head>
 
@@ -21,9 +21,9 @@
         
         <div class="navigation grid-item">
 		    <a href="user.php">Homepage</a>
-            <a href="Price_package.php">Price & package </a>
+            <a href="book_event.php">Book an Event</a>
             <a href="Event.php">Event set design </a>
-			<a href="order.php">Order </a>
+			<a href="myorder.php">Order </a>
             <a href="our_clients.php">Our clients </a>
             <a href="services_we_provide.php">services we provide </a>
             <a href="profile.php">My Profile</a>
