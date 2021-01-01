@@ -107,6 +107,12 @@ function regValidation() {
         err_contact.innerHTML = "Phone must have no alphabet";
     }
 
+    //gender validatio
+
+    if (getElement("")) {
+        
+    }
+
 
     //address
     if (isempty(address)) {
@@ -122,25 +128,21 @@ function regValidation() {
 
 
 
+function checkDuplicateUser(usernameInput) {
+    var username = usernameInput.value;
 
-//empty check
+    if (username.length >= 5 && username.length <= 10) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("duplicate-username").innerHTML = this.responseText;
+                console.log(this.responseText);
+            }
+        };
 
-function isempty(str) {
-    if (str == "") {
-        return true;
+        xhr.open("GET", "php-codes/registration-validation.php?checkDupliUsername=" + username, true);
+        xhr.send();
+    } else {
+        document.getElementById("duplicate-username").innerHTML = '';
     }
-    return false;
-}
-
-
-function checkNumberContains(str) {
-    for (let index = 0; index < str.length; index++) {
-        let s = str[index];
-        if (s == "1" || s == "2" || s == "3" || s == "4" || s == "5" || s == "6" || s == "7" || s == "8" || s == "9" || s == "0") {
-            return true;
-        }
-    }
-
-    return false;
-
 }

@@ -84,9 +84,9 @@
                     <?php echo $err_gender; ?>
                 </td>
                 <td>
-                    <input type="radio" checked name="gender" id="" value="1">Male
-                    <input type="radio" name="gender" id="" value="2">Female
-                    <input type="radio" name="gender" id="" value="3">Others
+                    <input type="radio" checked name="gender" id="male_gender" value="1">Male
+                    <input type="radio" name="gender" id="female_gender" value="2">Female
+                    <input type="radio" name="gender" id="others_gender" value="3">Others
                 </td>
             </tr>
 
@@ -116,7 +116,7 @@
             </tr>
 
             <tr>
-                <td><input type="reset" name="" id=""></td>
+                <td><input type="reset" value="Clear" name="" id=""></td>
                 <td><input type="submit" id="" name="register" value="Register"></td>
             </tr>
         </table>
@@ -125,5 +125,6 @@
 
     </script>
 
+    <script src="js/common-function.js"></script>
     <script src="js/reg-js-validation.js"></script>
 </div>
