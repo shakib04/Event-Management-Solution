@@ -39,18 +39,23 @@ $newUnApprovedPlanner = getAllUnApprovedPlanner();
         .active-new-reg {
             background-color: aliceblue;
         }
+
+        h3 {
+            margin: 10px;
+        }
     </style>
 </head>
 
 <body>
     <?php include_once "nav-bar.php" ?>
     <div class="new-planner-list">
-        <h2>New Registered <span style="background-color: #9b59b6; color:white ">Planners</span> List</h2>
+        <h3 class="heading-3">New Registered <span style="background-color: #9b59b6; color:white ">Planners</span> List [Order by Registration Date]</h3>
         <table>
             <tr>
                 <th>username</th>
                 <th>Status</th>
-                <th>email</th>
+                <th>Created Time</th>
+                <th>Email</th>
                 <th>Location</th>
                 <th>Contact No</th>
                 <th>Approve</th>
@@ -59,16 +64,18 @@ $newUnApprovedPlanner = getAllUnApprovedPlanner();
 
             <?php
             foreach ($newUnApprovedPlanner as $user) {
+                $regDate = explode("-", $user['registration_date']);
                 echo "<tr>";
 
                 echo '<td> <a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] . '</a> </td>';
-                echo "<td>Unapproved</td>";
+                echo "<td style='color: red;'>Unapproved</td>";
+                echo "<td> $regDate[2]/$regDate[1]/$regDate[0]</td>";
                 echo "<td>" . $user['email'] . "</td>";
                 echo "<td>" . $user['full_address'] . "</td>";
                 echo "<td>" . $user['phone_number'] . "</td>";
                 //echo "<td>" . $user['phone_number'] . "</td>";
                 echo "<td><a href='?username=" . $user['username'] . "&approve=yes'>Approve</a></td>";
-                echo "<td><a href=''>Delete</a></td>";
+                echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="">Delete</a></td>';
 
                 echo "</tr>";
             }
@@ -76,11 +83,12 @@ $newUnApprovedPlanner = getAllUnApprovedPlanner();
         </table>
     </div>
     <div class="new-client-list">
-        <h2>New Registered <span style="background-color: #0984e3; color:white ">Users(Client)</span> List</h2>
+        <h3>New Registered <span style="background-color: #0984e3; color:white ">Users(Client)</span> List[Order by Registration Date]</h3>
         <table>
             <tr>
                 <th>username</th>
                 <th>Status</th>
+                <th>Created</th>
                 <th>email</th>
                 <th>Location</th>
                 <th>Contact No</th>
@@ -90,16 +98,16 @@ $newUnApprovedPlanner = getAllUnApprovedPlanner();
 
             <?php
             foreach ($newUnapprovedUser as $user) {
-
+                $regDate = explode("-", $user['registration_date']);
                 echo "<tr>";
 
 
                 echo '<td> <a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] . '</a> </td>';
                 echo "<td style='color: red;'>Unapproved</td>";
+                echo "<td> $regDate[2]/$regDate[1]/$regDate[0]</td>";
                 echo "<td>" . $user['email'] . "</td>";
                 echo "<td>" . $user['full_address'] . "</td>";
                 echo "<td>" . $user['phone_number'] . "</td>";
-                //echo "<td>" . $user['phone_number'] . "</td>";
                 echo "<td><a href='?username=" . $user['username'] . "&approve=yes'>Approve</a></td>";
                 echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="">Delete</a></td>';
 

@@ -5,7 +5,6 @@ require_once "../controller/UserController.php";
 require_once "../controller/PlannerController.php";
 
 if (!isset($_GET['username'])) {
-    //header("location:dashboard-admin.php");
     echo "<h1>Username is Missing</h1>";
     die();
 }
@@ -17,8 +16,13 @@ if (count($userData) == 0) {
     die();
 }
 
-echo $type = $userData[0]['type'];
-
+$type = $userData[0]['type'];
+if ($type == "user") {
+    echo '<p>Back To User List <a href="client-users-list.php">User List</a></p>';
+}elseif ($type == "planner") {
+    echo '<p>Back To  <a href="event-planners-list.php">Planner List</a></p>';
+}
+echo "<h3>" . $_GET['username'] . "[$type] Details..</h3>";
 ?>
 
 
@@ -101,7 +105,7 @@ if ($type == "planner") {
             echo "Service Name: " . $service['service_name'] . "<br>";
             //echo "Category: " . $service['cat_name'] . "<br>";
             echo "Price: " . $service['service_price'] . "<br>";
-            echo "Service Provided By: <a href='user-details.php?username=" . $service['planner_username'] . "'>". $service['planner_username'] ."</a> <br>";
+            echo "Service Provided By: <a href='user-details.php?username=" . $service['planner_username'] . "'>" . $service['planner_username'] . "</a> <br>";
             echo "Status:(Paid/Unpaid): " . $service['status(paid/unpaid)'] . "<br>";
             echo "Planner Approve: " . $service['planner_approve'] . "<br>";
             echo "Planner Rating: " . $service['service_rating'] . "<br>";
