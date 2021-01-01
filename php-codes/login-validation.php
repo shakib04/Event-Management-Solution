@@ -62,7 +62,7 @@ if (isset($_POST['login'])) {
             //cookie
             $cookie_name = "username";
             $cookie_value = $login_username;
-            setcookie($cookie_name, $cookie_value, time() + (3660), "/");
+            setcookie($cookie_name, $cookie_value, time() + (3600), "/");
             if ($type == "admin") {
                 header("location:admin/index.php");
             } elseif ($type == "client" or $type == "user") {

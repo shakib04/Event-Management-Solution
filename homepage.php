@@ -85,18 +85,22 @@ require_once "php-codes/session-code.php";
 
     <div id="login">
         <?php require_once "php-codes/login-validation.php" ?>
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="return loginValidation()">
             <div class="login-box">Login</div>
             <table>
                 <tr>
                     <td>Username</td>
-                    <td><input type="text" name="username" id=""><?php echo $err_login_username; ?></td>
+                    <td>
+                        <input type="text" name="username" id="lg_username"><?php echo $err_login_username; ?>
+                        <span id="err_lg_username"></span>
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Password: </td>
                     <td>
-                        <input type="text" name="password" id=""> <?php echo $err_login_password; ?>
+                        <input type="text" name="password" id="lg_password"> <?php echo $err_login_password; ?>
+                        <span id="err_lg_password"></span>
                     </td>
                 </tr>
 
@@ -107,6 +111,8 @@ require_once "php-codes/session-code.php";
             </table>
             <?php echo $invalidCred; ?>
         </form>
+        <script src="js/common-function.js"></script>
+        <script src="js/login-js-validation.js"></script>
     </div>
 
     <div id="reg-part">
