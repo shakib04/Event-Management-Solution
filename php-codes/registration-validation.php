@@ -125,8 +125,10 @@ if (isset($_POST['register'])) {
         $err_email = "<span style='color:red;'> Email is Required </span>";
     } elseif (strpos($_POST['email'], " ")) {
         $err_email = "<span style='color:red;'> Space is not Allowed </span>";
-    } elseif (!strpos($_POST['email'], "@") or !strpos($_POST['email'], ".")) {
+    } elseif (!strpos($_POST['email'], "@")) {
         $err_email = "<span style='color:red;'> Email is not valid. No [@] </span>";
+    } elseif (!strpos($_POST['email'], ".")) {
+        $err_email = "<span style='color:red;'> Email is not valid. No [.] </span>";
     } elseif (strpos($_POST['email'], "@")) {
         $atRatePos = strpos($_POST['email'], "@");
 
@@ -145,8 +147,6 @@ if (isset($_POST['register'])) {
             $validCount++;
         } else {
             $err_email = "<span style='color:red;'> Email is not valid </span>";
-
-            //
         }
     }
 
