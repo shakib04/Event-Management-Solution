@@ -70,41 +70,27 @@
     if (empty(trim($_POST["full_address"]))) {
         $err_full_address = "<span style='color:red;'> Address is Required </span>";
     } else {
-        $"full_address" = htmlspecialchars($_POST["full_address"]);
+        $full_address = htmlspecialchars($_POST["full_address"]);
          $CountValid++;
     }
 	}
         
         
 		if($countValid==5){
-			
-		 if(getUser()){
-               session_start();
-               $_SESSION["username"] = $username;
-               setcookie("username",$username,time() + 360);
-               
-           }
-           else{
-               echo "Invalid Credentials!";
-           }
-		   addUser();
+		
+		   
         }	
 			
-		}
-		function getUser(){
-        global $username,$Full_Name,$email,$phone_number,$full_address;
-        $query="SELECT * FROM all_registered_users WHERE fullname='$Full_Name' AND username='$username' AND email='$email' AND phone='$phone_number' AND address='$full_address' ";
+	
+		function profileDetais(){
+        $query="SELECT * FROM all_registered_users WHERE username='$_SESSION["username"]'";
         $result=get($query);
         if(count($result)>0){
             return $result ;
         }
         return false;
        }
-       function addUser(){
-        global $phone_number,$full_address;
-        $query="INSERT INTO all_registered_users VALUES('$phone_number','$full_address')";
-        execute($query);
-      }
+       
 			
 			
 		

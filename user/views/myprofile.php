@@ -50,29 +50,29 @@
             <table class="center">
             <tr>
                 <td>Username:</td>
-                <td><input type="text" value="<?php echo $username?>" placeholder="Username" name="username"></td>
+                <td><input type="text" value="<?php echo $_SESSION["username"];?>" placeholder="Username" name="username"></td>
                 <td><span style="color:red;">*<?php echo $err_username;?></span></td>
             </tr>
             <tr>
                 <td>Full Name:</td>
-                <td><input type="text" value="<?php echo $Full_Name?>" placeholder="Fullname" name="Full_Name"></td>
+                <td><input type="text" value="<?php echo $Full_Name;?>" placeholder="Fullname" name="Full_Name"></td>
                  <td><span style="color:red;">*<?php echo $err_Full_Name;?></span></td>
             </tr>
             <tr>
                 <td>Email:</td>
-                <td><input type="text" value="<?php echo $email?>" placeholder="Email" name="email"></td>
+                <td><input type="text" value="<?php echo $email;?>" placeholder="Email" name="email"></td>
                 <td><span style="color:red;">*<?php echo $err_email;?></span></td>
             </tr>
 
             <tr>
                 <td>Phone Number:</td>
-                 <td><input type="text" value="<?php echo $phone_number?>"placeholder="Phone Number" name="phone_number"></td>
+                 <td><input type="text" value="<?php echo $phone_number;?>"placeholder="Phone Number" name="phone_number"></td>
                 <td><span style="color:red;">*<?php echo $err_phone_number;?></span></td>
             </tr>
 
             <tr>
                 <td>Address</td>
-                 <td><input type="text" value="<?php echo $full_address?>" placeholder="Address" name="full_address"></td>
+                 <td><input type="text" value="<?php echo $full_address;?>" placeholder="Address" name="full_address"></td>
                 <td><span style="color:red;">*<?php echo $err_full_address;?></span></td>
             </tr>
 			
