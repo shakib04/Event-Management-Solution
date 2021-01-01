@@ -13,6 +13,12 @@ if (isset($_SESSION['type'])) {
     }
 }
 
+if (!isset($_COOKIE['username'])) {
+    session_unset();
+    session_destroy();
+    header("location: ../../homepage.php");
+}
+
 if (isset($_POST['logout'])) {
     session_unset();
     session_destroy();
