@@ -140,25 +140,7 @@ require_once "php-codes/session-code.php";
         }
 
 
-        function checkDuplicateUser(usernameInput) {
-            //alert("dd");
-            var username = usernameInput.value;
-
-            if (username.length >= 5 && username.length <= 10) {
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("duplicate-username").innerHTML = this.responseText;
-                        console.log(this.responseText);
-                    }
-                };
-
-                xhr.open("GET", "php-codes/registration-validation.php?username=" + username, true);
-                xhr.send();
-            } else {
-                document.getElementById("duplicate-username").innerHTML = '';
-            }
-        }
+        
     </script>
 </body>
 

@@ -146,7 +146,7 @@ if (isset($_POST['register'])) {
             $email = htmlspecialchars($_POST['email']);
             $validCount++;
         } else {
-            $err_email = "<span style='color:red;'> Email is not valid </span>";
+            $err_email = "<span style='color:red;'> Email is not valid. No Dot</span>";
         }
     }
 
@@ -205,8 +205,6 @@ if (isset($_POST['register'])) {
 
     if ($validCount == 9 && $newUser) {
 
-        //first check duplicate user 
-
         //create a templete
         $sql = "INSERT INTO `all_registered_users` (`Full_Name`, `username`, `password`, gender, `type`, `approved`, `email`, `phone_number`, `full_address`, registration_date) VALUES ('$fullname', '$username', '$password', '$gender', '$type', 'no', '$email', '$phoneNumber', '$address','" . date("Y/m/d") . "')";
         if (execute($sql)) {
@@ -230,10 +228,10 @@ function checkUser($username)
     return false;
 }
 
-if (isset($_GET['username'])) {
-    $getUsername = $_GET['username'];
+if (isset($_GET['checkDupliUsername'])) {
+    $getUsername = $_GET['checkDupliUsername'];
     if (checkUser($getUsername)) {
-        echo "<span style='color:red;'>Username is Taken</span>";
+        echo "<span style='color:red;'>Username is Taken. Select Another one</span>";
     } else {
         echo "<span style='color:green;'>Username is Available</span>";
     }
