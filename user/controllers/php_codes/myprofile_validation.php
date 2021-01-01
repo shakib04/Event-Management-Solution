@@ -1,4 +1,5 @@
 <?php
+
     require_once '../models/db_connection.php';
 ?>
 <?php
@@ -77,14 +78,16 @@
         
         
 		if($countValid==5){
-		
+           
 		   
         }	
-			
+		profileDetais();
 	
 		function profileDetais(){
-        $query="SELECT * FROM all_registered_users WHERE username='$_SESSION["username"]'";
+        echo $query="SELECT * FROM all_registered_users WHERE username='" . $_SESSION['username'] . "'";
         $result=get($query);
+        print_r($_SESSION);
+
         if(count($result)>0){
             return $result ;
         }

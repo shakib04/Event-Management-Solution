@@ -1,4 +1,6 @@
-<?php include_once "../controllers/php_codes/Registration_validation.php" ;?>
+<?php 
+ 
+ ?>
 <html>
     <head>
         <title>Registration</title>

@@ -1,8 +1,6 @@
   
 <?php
-    if(!isset($_COOKIE["username"])){
-		header("Location: login.php");
-	}
+   require_once "session-code.php";
 ?> 
 
 <html>

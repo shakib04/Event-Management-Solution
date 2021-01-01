@@ -1,6 +1,6 @@
  
 <?php
-     include_once "../controllers/php_codes/login_validation.php" ;
+     
 ?> 
 <html>
     <head>

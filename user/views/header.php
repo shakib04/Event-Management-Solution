@@ -1,7 +1,5 @@
   <?php
-    if(!isset($_COOKIE["username"])){
-		header("Location: login.php");
-	}
+    require_once "session-code.php";
 ?>
 <html> 
 <head>
@@ -13,9 +11,9 @@
 
 <body>
 
-     <div class="log-out grid-item">
-	    <a href="login.php">logout</a>
-	</div>
+     <form action="" method="post">
+        <input type="submit" value="Log Out,<?php echo $_SESSION['username']; ?>"class="log-out-button" name="logout">
+    </form>
 	
     <div class="layout grid-cont">
         
@@ -26,7 +24,7 @@
 			<a href="myorder.php">Order </a>
             <a href="our_clients.php">Our clients </a>
             <a href="services_we_provide.php">services we provide </a>
-            <a href="profile.php">My Profile</a>
+            <a href="myprofile.php">My Profile</a>
 			
 			
         </div>
