@@ -30,8 +30,6 @@ $myjson = json_encode($allServices);
             margin: 20px auto;
         }
 
-        .add-employee input {}
-
         td,
         th {
             padding: 20px;
