@@ -47,73 +47,55 @@
 
       <div>
           <h2>My Profile Details</h2>
-          <form action=" " method="post" onclick="loadEditProfile()">
+          <form action=" " method="post" onsubmit="return doProfileValidation()">
               <table>
 
                   <table class="center">
                       <tr>
                           <td>Username:</td>
                           <td>
-                              <input type="text" value="<?php echo $_SESSION['username']; ?>" placeholder="Username" name="username">
+                              <input type="text" id="username" value="<?php echo $_SESSION['username']; ?>" placeholder="Username" name="username"><span id="err_username" style="color:red;"></span>
                               <span style="color:red;"><?php echo $err_username; ?></span>
                         </td>
                       </tr>
                       <tr>
                           <td>Full Name:</td>
                           <td>
-                              <input type="text" value="<?php echo $Full_Name; ?>" placeholder="Fullname" name="Full_Name">
+                              <input type="text" id="fullname" value="<?php echo $Full_Name; ?>" placeholder="Fullname" name="Full_Name"><span id="err_fullname" style="color:red;"></span>
                           <span style="color:red;"><?php echo $err_Full_Name; ?></span>
                         </td>
                       </tr>
                       <tr>
                           <td>Email:</td>
-                          <td><input type="text" value="<?php echo $email; ?>" placeholder="Email" name="email">
+                          <td><input type="text" id="email" value="<?php echo $email; ?>" placeholder="Email" name="email"><span id="err_email" style="color:red;"></span>
                           <span style="color:red;"><?php echo $err_email; ?></span></td>
                       </tr>
 
                       <tr>
                           <td>Phone Number:</td>
-                          <td><input type="text" value="<?php echo $phone_number; ?>" placeholder="Phone Number" name="phone_number">
+                          <td><input type="text"id="phone" value="<?php echo $phone_number; ?>" placeholder="Phone Number" name="phone_number"><span id="err_phone" style="color:red;"></span>
                           <span style="color:red;"><?php echo $err_phone_number; ?></span></td>
                       </tr>
 
                       <tr>
                           <td>Address</td>
-                          <td><input type="text" value="<?php echo $full_address; ?>" placeholder="Address" name="full_address">
+                          <td><input type="text"id="address" value="<?php echo $full_address; ?>" placeholder="Address" name="full_address"><span id="err_address" style="color:red;"></span>
                           <span style="color:red;"><?php echo $err_full_address; ?></span></td>
                       </tr>
 
                       <tr>
 
-                          <td colspan="2"><button onclick="loadEditProfile()">Edit Profile </button></td>
-                      </tr>
+                          <td colspan="2"><a href="myedit_profile.php">Edit Profile</a></td>
+                     </tr>
 
 
 
                   </table>
                   
           </form>
+          
 
-          <div id="output">
-
-          </div>
-          <script>
-        function loadEditProfile() {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (this.status == 200 && this.readyState == 4) {
-                    document.getElementById("output").innerHTML = this.responseText;
-                }
-            };
-            xhr.open("GET", "myedit_profile.php", true);
-            xhr.send();
-        }
-
-
-        
-    </script>
-
-
+    <script src="../scripts/profilevalidation.js"></script>
 
   </body>
 

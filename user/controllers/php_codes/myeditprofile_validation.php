@@ -1,4 +1,8 @@
 <?php
+    
+    require_once "../models/db_connection.php";
+?>
+<?php
     $username="";
 	$err_username="";
     $Full_Name="";
@@ -9,9 +13,14 @@
 	$err_phone_number="";
 	$full_address="";
 	$err_full_address="";
-	$countValid= 0;
+    $countValid= 0;
+    $Full_Name = $columns[0]['Full_Name'];
+    $username = $columns[0]['username'];
+    $email = $columns[0]['email'];
+    $phone_number = $columns[0]['phone_number'];
+    $full_address = $columns[0]['full_address'];
 	
-	if(isset($_POST["OK"])){
+	if(isset($_POST['submit'])){
         //FULL NAME VALIDATION
         if(empty($_POST["Full_Name"])){
 			$err_Full_Name="Full Name Required";	
@@ -20,16 +29,6 @@
 			$Full_Name = htmlspecialchars($_POST["Full_Name"]);
 			$countValid++;
         }
-		//User name validation
-		if(empty($_POST["username"])){
-			$err_username="Username Required";
-				
-		}
-		else{
-			$username = htmlspecialchars($_POST["username"]);
-			$countValid++;
-        }
-        
         //EMAIL VALIDATION
         if(empty($_POST["email"])){
             $err_email="Please Enter Email!";
@@ -52,8 +51,8 @@
 		
 		
 	//phone validation	
-    if (empty(trim($_POST["phone_number"]))) {
-        $err_phone_number = "<span style='color:red;'> Phone Number is Required </span>";
+    if (empty($_POST["phone_number"])) {
+        $err_phone_number = "<span style='color:red;'> Phone Required </span>";
     } elseif (!is_numeric($_POST["phone_number"])) {
         $err_phone_number = "<span style='color:red;'> Number is not valid (only numeric) </span>";
     } elseif (strpos($_POST["phone_number"], " ")) {
@@ -65,22 +64,30 @@
 	
     //address validation 
 
-    if (empty(trim($_POST["full_address"]))) {
-        $err_full_address = "<span style='color:red;'> Address is Required </span>";
+    if (empty($_POST["full_address"])) {
+        $err_full_address = "<span style='color:red;'> Address Required </span>";
     } else {
         $full_address = htmlspecialchars($_POST["full_address"]);
          $CountValid++;
     }
-	}
-        
-        
-		if($countValid==5){
-			
-			
-		}
-			
-			
-		
 	
+        
+    if ($countValid== 4) {
+        $query = "UPDATE all_registered_users SET Full_Name = '$Full_Name', email = '$email', phone_number = '$phone_number', full_address = '$full_address' WHERE 'all_registered_users''username' = '" . $username . "';";
+        if (execute($query)) {
+            if ($username == $_SESSION['username']) {
+                header("location:myprofile.php");    
+        } else {
+            echo "Failed to Save";
+        }
+    }
+}
+    }
+    profileDetails();
 	
-?>
+		function profileDetails(){
+        $query="SELECT * FROM all_registered_users WHERE username='" . $_SESSION['username'] . "'";
+        $columns= getColumsValue($query);
+        return  $columns ;
+       }
+ ?>

@@ -68,14 +68,10 @@
             </tr>
 			
             <tr>
-
-                <td colspan="2"><input type="submit" name="OK" value="OK"></td>
+                <td colspan="2">
+                    <input type="submit" name="submit" value="Save">
+                </td>
             </tr>
-			 <tr>
-
-                <td colspan="2"><a href="myprofile.php">Back</a></td>
-            </tr>
-           
            
         </table>
 		  </form>
