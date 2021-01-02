@@ -67,14 +67,8 @@
                 <td>Address</td>
                 <td><input type="text" id="address" placeholder="Address" name="address"><span id="err_address" style="color:red;">*</span><br></td>
             </tr>
-			
-            <tr>
-
-                <td colspan="2"><input type="submit" name="OK" value="OK"></td>
-            </tr>
 
             <tr>
-
                 <td colspan="2"><button onclick="loadEditProfile()">Edit Profile </button></td>
             </tr>
 			
@@ -85,17 +79,20 @@
 			
 			</div>
 			<script>
-			     function loadEditProfile() {
-                     var xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function() {
-                       if (this.readyState == 4 && this.status == 200) {
-                      document.getElementById("output").innerHTML = this.responseText;
-                      }
-                     };
-                    xhttp.open("GET", "myedit_profile.php", true);
-                    xhttp.send();
-                        }
-			</script>
+        function loadEditProfile() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.status == 200 && this.readyState == 4) {
+                    document.getElementById("output").innerHTML = this.responseText;
+                }
+            };
+            xhr.open("GET", "myedit_profile.php", true);
+            xhr.send();
+        }
+
+
+        
+    </script>
 			 <script src="../scripts/profilevalidation.js"></script>
 			 
 			

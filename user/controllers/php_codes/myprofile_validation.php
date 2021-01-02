@@ -1,6 +1,6 @@
 <?php
-
-    require_once '../models/db_connection.php';
+    
+    require_once "../models/db_connection.php";
 ?>
 <?php
     $username="";
@@ -13,7 +13,13 @@
 	$err_phone_number="";
 	$full_address="";
 	$err_full_address="";
-	$countValid= 0;
+    $countValid= 0;
+    $Full_Name = $columns[0]['Full_Name'];
+    $username = $columns[0]['username'];
+    $email = $columns[0]['email'];
+    $phone_number = $columns[0]['phone_number'];
+    $full_address = $columns[0]['full_address'];
+
 	
 	if(isset($_POST["OK"])){
         //FULL NAME VALIDATION
@@ -81,18 +87,14 @@
            
 		   
         }	
-		profileDetais();
+		profileDetails();
 	
-		function profileDetais(){
-        echo $query="SELECT * FROM all_registered_users WHERE username='" . $_SESSION['username'] . "'";
-        $result=get($query);
-        print_r($_SESSION);
-
-        if(count($result)>0){
-            return $result ;
-        }
-        return false;
+		function profileDetails(){
+        $query="SELECT * FROM all_registered_users WHERE username='" . $_SESSION['username'] . "'";
+        $columns= getColumsValue($query);
+        return  $columns ;
        }
+ 
        
 			
 			

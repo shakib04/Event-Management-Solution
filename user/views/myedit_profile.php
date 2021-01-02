@@ -80,7 +80,7 @@
             </tr>
             <tr>
 
-                <td colspan="2"><a href="profile.php">Back</a></td>
+                <td colspan="2"><a href="myprofile.php">Back</a></td>
             </tr>
            
         </table>
