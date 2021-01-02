@@ -8,7 +8,6 @@ if (isset($_POST['get_purchase_data'])) {
         $err_start_date = "Start Date Missing";
     } else {
         $start_date = $_POST['start_date'];
-        echo $start_date;
         $validCount++;
     }
     if ($_POST['end_date'] == "") {
@@ -26,13 +25,10 @@ if (isset($_POST['get_purchase_data'])) {
     }
 
     if (isset($_POST['paid']) and isset($_POST['unpaid'])) {
-        echo "both checked";
     } elseif (isset($_POST['paid'])) {
-        echo "paid checked";
         $status = $_POST['paid'];
         $validCount++;
     } elseif (isset($_POST['unpaid'])) {
-        echo "unpaid checked";
         $status = $_POST['unpaid'];
         $validCount++;
     }
