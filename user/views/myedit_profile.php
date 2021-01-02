@@ -50,7 +50,7 @@
             <table class="center">
             <tr>
                 <td>Full Name:</td>
-                <td><input type="text" id="Full_Name" value="<?php echo $Full_Name?>" placeholder="Fullname" name="fullname"><span id="err_Full_Name" style="color:red;"></span>
+                <td><input type="text" id="Full_Name" value="<?php echo $Full_Name?>" placeholder="Fullname" name="Full_Name"><span id="err_Full_Name" style="color:red;"></span>
                 <span style="color:red;"><?php echo $err_Full_Name;?></span></td>
                  
             </tr>
@@ -63,14 +63,14 @@
 
             <tr>
                 <td>Phone Number:</td>
-                 <td><input type="text" id="phone_number" value="<?php echo $phone_number?>" placeholder="Phone Number" name="phone"><span id="err_phone_number" style="color:red;"></span>
+                 <td><input type="text" id="phone_number" value="<?php echo $phone_number?>" placeholder="Phone Number" name="phone_number"><span id="err_phone_number" style="color:red;"></span>
                  <span style="color:red;"><?php echo $err_phone_number;?></span></td>
                
             </tr>
 
             <tr>
                 <td>Address</td>
-                 <td><input type="text" id="full_address" value="<?php echo $full_address?>" placeholder="Address" name="address"><span id="err_full_address" style="color:red;"></span>
+                 <td><input type="text" id="full_address" value="<?php echo $full_address?>" placeholder="Address" name="full_address"><span id="err_full_address" style="color:red;"></span>
                  <span style="color:red;"><?php echo $err_full_address;?></span></td>
                 
             </tr>

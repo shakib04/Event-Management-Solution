@@ -59,7 +59,7 @@
         $err_phone_number = "<span style='color:red;'> Space is not Allowed </span>";
     } else {
         $phone_number = htmlspecialchars($_POST["phone_number"]);
-        $CountValid++;
+        $countValid++;
     }
 	
     //address validation 
@@ -68,15 +68,15 @@
         $err_full_address = "<span style='color:red;'> Address Required </span>";
     } else {
         $full_address = htmlspecialchars($_POST["full_address"]);
-         $CountValid++;
+         $countValid++;
     }
 	
         
     if ($countValid== 4) {
-        $query = "UPDATE all_registered_users SET Full_Name = '$Full_Name', email = '$email', phone_number = '$phone_number', full_address = '$full_address' WHERE 'all_registered_users''username' = '" . $username . "';";
-        if (execute($query)) {
+     $query = "UPDATE all_registered_users SET Full_Name = '$Full_Name', email = '$email', phone_number = '$phone_number', full_address = '$full_address' WHERE username = '" . $username . "';";
+      if (execute($query)) {
             if ($username == $_SESSION['username']) {
-                header("location:myprofile.php");    
+             header("location:myprofile.php");    
         } else {
             echo "Failed to Save";
         }
