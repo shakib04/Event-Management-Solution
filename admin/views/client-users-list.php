@@ -86,6 +86,12 @@ if (isset($_GET['username']) && isset($_GET['delete']) && isset($_GET['type'])) 
         <input type="text" placeholder="Search Here" onkeyup="searchUser(this)" class="search-user">
         <br> <br>
 
+        <script>
+            
+            var userInfo = '{"type":"user"}';
+            var userObj = JSON.parse(userInfo);
+        </script>
+
         <script src="js/live-search.js"></script>
 
 
@@ -117,9 +123,7 @@ if (isset($_GET['username']) && isset($_GET['delete']) && isset($_GET['type'])) 
         </div>
     </div>
 
-    <script>
 
-    </script>
 </body>
 
 </html>

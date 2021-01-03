@@ -9,10 +9,10 @@ if (isset($_GET['name'])) {
         //echo "<pre>";
         //print_r($users);
         //echo "</pre>";
-        
+
         foreach ($users as $user) {
-            
-            
+
+
             echo '<div class="planner-card">';
 
             echo 'Username: <a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] . '</a> <br>';
@@ -30,7 +30,7 @@ if (isset($_GET['name'])) {
             //echo 'Event Completed: 1 <br>';
             //echo 'Rating: 0 <br>';
             echo '<a href="edit-user.php?username=' . $user['username'] . '">Edit</a> ';
-            echo '<a href="">Delete</a>';
+            echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="?username=' . $user['username'] . '&delete=yes&type=' . $user['type'] . '">Delete</a></td>';
             echo '</div>';
         }
     }

@@ -2,7 +2,8 @@
 
 function searchUser(searchInput) {
     var nameValue = searchInput.value;
-    var type = document.getElementById("type").innerHTML;
+    //var type = document.getElementById("type").innerHTML;
+    var type = userObj.type;
     //console.log(nameValue + " " + type);
     if (type == "planner") {
         var xhr = new XMLHttpRequest();

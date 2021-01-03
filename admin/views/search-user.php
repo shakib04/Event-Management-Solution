@@ -17,7 +17,7 @@ if (isset($_GET['name'])) {
             echo 'Phone Number:' . $user['phone_number'] . '<br>';
             echo 'Address:' . $user['full_address'] . '<br>';
             echo '<a href="edit-user.php?username=' . $user['username'] . '">Edit</a> ';
-            echo '<a href="">Delete</a>';
+            echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="?username=' . $user['username'] . '&delete=yes&type=' . $user['type'] . '">Delete</a></td>';
             echo '</div>';
         }
     }

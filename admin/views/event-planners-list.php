@@ -85,6 +85,10 @@ if (isset($_GET['username']) && isset($_GET['delete']) && isset($_GET['type'])) 
             <!-- <input type="submit" value="Search" class="search-button"> -->
         </form> <br>
 
+        <script>
+            var userInfo = '{"type":"planner"}';
+            var userObj = JSON.parse(userInfo);
+        </script>
         <script src="js/live-search.js"></script>
         <h2>Event Planners</h2>
         <div id="result">
