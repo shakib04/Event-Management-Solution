@@ -26,6 +26,7 @@ if (isset($_POST['login'])) {
         $err_login_password = "<span style='color:red;'> Password is Required </span>";
     } else {
         $login_password = validate($_POST['password']);
+        $login_password = md5($login_password);
         $validCount++;
     }
 

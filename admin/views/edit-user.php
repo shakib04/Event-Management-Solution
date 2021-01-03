@@ -51,8 +51,15 @@ require_once "nav-bar.php";
         <tr>
             <td>Gender <?php echo $err_gender ?></td>
             <td>
-                <input type="radio" name="gender" id="" value="Male" checked> Male
-                <input type="radio" name="gender" id="" value="Female"> Female
+                <input type="radio" name="gender" id="" value="male" <?php if ($gender == "male") {
+                                                                            echo "checked";
+                                                                        } ?>> Male
+                <input type="radio" name="gender" id="" value="female" <?php if ($gender == "female") {
+                                                                            echo "checked";
+                                                                        } ?>> Female
+                <input type="radio" name="gender" id="" value="others" <?php if ($gender == "others") {
+                                                                            echo "checked";
+                                                                        } ?>> Others
             </td>
         </tr>
 

@@ -15,7 +15,7 @@ function allPlanner()
 
 function plannerServices($username)
 {
-    $sqlServiceList = "SELECT * FROM planner_services_list psl, event_categories ec WHERE psl.e_category = ec.id and username = '". $username ."'";
+    $sqlServiceList = "SELECT * FROM planner_services_list psl, event_categories ec WHERE psl.e_category = ec.id and username = '" . $username . "'";
     //SELECT * FROM planner_services_list psl, event_categories ec WHERE psl.e_category = ec.id and username = 'joy004';
     $data = getColumsValue($sqlServiceList);
     return $data;
@@ -34,7 +34,16 @@ function getAllUnApprovedPlanner()
 
 function getTotalEarning($username)
 {
-    echo $sql = "SELECT SUM(service_price) totalEarning FROM `purchased_services_details` WHERE planner_username = '". $username ."';";
+    echo $sql = "SELECT SUM(service_price) totalEarning FROM `purchased_services_details` WHERE planner_username = '" . $username . "';";
     $data = getColumsValue($sql);
     return $data;
 }
+
+
+function deletePlanner($username)
+{
+    $sql = "DELETE FROM `all_registered_users` WHERE `all_registered_users`.`username` ='$username'";
+    $result = execute($sql);
+    return $result;
+}
+

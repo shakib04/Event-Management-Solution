@@ -9,6 +9,8 @@ var err_password = getElement("erPassword");
 var err_cfpassword = getElement("ercfpassword");
 var err_contact = getElement("erContact");
 var err_address = getElement("erAddress");
+var err_type = getElement("err_Type");
+var err_gender = getElement("err_gender");
 
 
 function refresh() {
@@ -19,6 +21,8 @@ function refresh() {
     err_cfpassword.innerHTML = "";
     err_contact.innerHTML = "";
     err_address.innerHTML = "";
+    err_type.innerHTML = "";
+    err_gender.innerHTML = "";
 
 }
 
@@ -107,10 +111,11 @@ function regValidation() {
         err_contact.innerHTML = "Phone must have no alphabet";
     }
 
-    //gender validatio
+    //gender validation
 
-    if (getElement("")) {
-        
+    if (getElement("male_gender").checked != true && getElement("female_gender").checked != true && getElement("others_gender").checked != true) {
+        hasError = true;
+        err_gender.innerHTML = "Select One";
     }
 
 
@@ -121,6 +126,12 @@ function regValidation() {
     } else if (address.length > 200) {
         hasError = true;
         err_address.innerHTML = "Length of address is greater than 200";
+    }
+
+    //type validation
+    if (getElement("user").checked != true && getElement("planner").checked != true) {
+        hasError = true;
+        err_type.innerHTML = "Select One";
     }
 
     return !hasError;

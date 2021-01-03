@@ -11,6 +11,28 @@ $newApprovedUser = getAllApprovedUser();
 
 $newUnApprovedPlanner = getAllUnApprovedPlanner();
 
+if (isset($_GET['username']) && isset($_GET['delete']) && isset($_GET['type'])) {
+    if (strtolower($_GET['type']) == "planner") {
+        $result = deletePlanner($_GET['username']);
+        if (!$result) {
+            echo "<h1 style='color:red;'>This Planner has Some Service List. Can Not Delete</h1>";
+        } else {
+            echo "<h1>Deleted Success</h1>";
+            sleep(5);
+            header("location:new-registered.php");
+        }
+    } elseif (strtolower($_GET['type']) == "user") {
+        $result = deleteUser($_GET['username']);
+        if (!$result) {
+            echo "<h1>This User has Some Purchase List. Can Not Delete</h1>";
+        } else {
+            echo "<h1>Deleted Success</h1>";
+            sleep(5);
+            header("location:new-registered.php");
+        }
+    }
+}
+
 
 ?>
 
@@ -75,7 +97,7 @@ $newUnApprovedPlanner = getAllUnApprovedPlanner();
                 echo "<td>" . $user['phone_number'] . "</td>";
                 //echo "<td>" . $user['phone_number'] . "</td>";
                 echo "<td><a href='?username=" . $user['username'] . "&approve=yes'>Approve</a></td>";
-                echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="">Delete</a></td>';
+                echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="?username=' . $user['username'] . '&delete=yes&type=' . $user['type'] . '">Delete</a></td>';
 
                 echo "</tr>";
             }
@@ -109,7 +131,7 @@ $newUnApprovedPlanner = getAllUnApprovedPlanner();
                 echo "<td>" . $user['full_address'] . "</td>";
                 echo "<td>" . $user['phone_number'] . "</td>";
                 echo "<td><a href='?username=" . $user['username'] . "&approve=yes'>Approve</a></td>";
-                echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="">Delete</a></td>';
+                echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="?username=' . $user['username'] . '&delete=yes&type=' . $user['type'] . '">Delete</a></td>';
 
                 echo "</tr>";
             }

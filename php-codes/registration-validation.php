@@ -11,7 +11,6 @@ require_once "database-conn.php";
 // }
 $err_fullname = $err_username = $err_password = $err_fname = $err_cfpassword = $err_email = $err_phoneNumber = $err_address = $err_gender = $errType = "";
 $fullname = $username = $password = $fname = $cfpassword = $email = $phoneNumber = $address = $type = "";
-//$temp_username = $temp_password = $temp_fname = $temp_user_type = $temp_email = $temp_phone_number = $temp_address = $temp_local_address = "";
 
 
 $validCount = 0;
@@ -96,6 +95,7 @@ if (isset($_POST['register'])) {
         $err_cfpassword = "<span style='color:red;'>Password does not match</span>";
     } else {
         $cfpassword = $_POST['cfpassword'];
+        $password = md5($password);
         $validCount++;
     }
 
@@ -205,7 +205,6 @@ if (isset($_POST['register'])) {
 
     if ($validCount == 9 && $newUser) {
 
-        //create a templete
         $sql = "INSERT INTO `all_registered_users` (`Full_Name`, `username`, `password`, gender, `type`, `approved`, `email`, `phone_number`, `full_address`, registration_date) VALUES ('$fullname', '$username', '$password', '$gender', '$type', 'no', '$email', '$phoneNumber', '$address','" . date("Y/m/d") . "')";
         if (execute($sql)) {
             echo "<span class='succuess message-btn'>Registration Success</span>";

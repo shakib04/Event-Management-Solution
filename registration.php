@@ -54,10 +54,11 @@
             <tr>
                 <td>
                     I want to
+                    <span id="err_Type"></span>
                 </td>
                 <td>
-                    <input type="radio" name="type" id="" checked value="1">(User) Search a Planner <br>
-                    <input type="radio" name="type" id="" value="2">(Planner) Plan for People
+                    <input type="radio" name="type" id="user" value="1">(User) Search a Planner <br>
+                    <input type="radio" name="type" id="planner" value="2">(Planner) Plan for People
                 </td>
             </tr>
 
@@ -81,10 +82,11 @@
 
             <tr>
                 <td>Gender:
+                <span id="err_gender"></span>
                     <?php echo $err_gender; ?>
                 </td>
                 <td>
-                    <input type="radio" checked name="gender" id="male_gender" value="1">Male
+                    <input type="radio" name="gender" id="male_gender" value="1">Male
                     <input type="radio" name="gender" id="female_gender" value="2">Female
                     <input type="radio" name="gender" id="others_gender" value="3">Others
                 </td>

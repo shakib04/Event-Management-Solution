@@ -5,6 +5,19 @@ require_once "../controller/UserController.php";
 require_once "../model/database-conn.php";
 
 $users = allUser();
+//echo $users[0]['type'];
+
+if (isset($_GET['username']) && isset($_GET['delete']) && isset($_GET['type'])) {
+    if (strtolower($_GET['type']) == "user") {
+        $result = deleteUser($_GET['username']);
+        if (!$result) {
+            echo "<h1>This User has Some Purchase List. Can Not Delete</h1>";
+        } else {
+            echo "<h1>Deleted Success</h1>";
+            header("location:client-users-list.php");
+        }
+    }
+}
 
 
 ?>
@@ -69,16 +82,14 @@ $users = allUser();
         <?php //include_once "search-option.php" 
         ?>
 
-        <form action="">
-            <span id="type" style="visibility: hidden;">user</span>
-            <input type="text" placeholder="Search Here" onkeyup="searchUser(this)" class="search-user">
-            <input type="submit" value="Search" class="search-button">
-        </form> <br>
+        <span id="type" style="visibility: hidden;">user</span>
+        <input type="text" placeholder="Search Here" onkeyup="searchUser(this)" class="search-user">
+        <br> <br>
 
         <script src="js/live-search.js"></script>
 
 
-        <h2>All Clients [Order by Amount Spent]</h2>
+        <h2>All Clients [Order by]</h2>
         <div id="result">
             <?php
             if (count($users) > 0) {
@@ -98,7 +109,7 @@ $users = allUser();
                     //echo 'Event Completed: 1 <br>';
                     //echo 'Rating: 0 <br>';
                     echo '<a href="edit-user.php?username=' . $user['username'] . '">Edit</a> ';
-                    echo '<a href="">Delete</a>';
+                    echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="?username=' . $user['username'] . '&delete=yes&type=' . $user['type'] . '">Delete</a></td>';
                     echo '</div>';
                 }
             }

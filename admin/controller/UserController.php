@@ -58,3 +58,12 @@ function getUserPurchaseDetails($username)
     $data = getColumsValue($sqlPurchaseDetails);
     return $data;
 }
+
+
+//delete by username
+function deleteUser($username)
+{
+    $sql = "DELETE FROM `all_registered_users` WHERE `all_registered_users`.`username` ='$username'";
+    $result = execute($sql);
+    return $result;
+}

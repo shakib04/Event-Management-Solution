@@ -5,6 +5,18 @@ require_once "../controller/PlannerController.php";
 require_once "../model/database-conn.php";
 $users = allPlanner();
 
+if (isset($_GET['username']) && isset($_GET['delete']) && isset($_GET['type'])) {
+    if (strtolower($_GET['type']) == "planner") {
+        $result = deletePlanner($_GET['username']);
+        if (!$result) {
+            echo "<h1 style='color:red;'>This Planner has Some Service List. Can Not Delete</h1>";
+        } else {
+            echo "<h1>Delete Success</h1>";
+            header("location:event-planners-list.php");
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -84,24 +96,24 @@ $users = allPlanner();
                 foreach ($users as $user) {
                     echo '<div class="planner-card">';
 
-                    echo 'Username: <a href="user-details.php?username='. $user['username'] .'">' . $user['username'] . '</a> <br>';
+                    echo 'Username: <a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] . '</a> <br>';
                     echo 'Full Name:' . $user['Full_Name'] . '<br>';
-                    echo 'Balance:'. $user['balance'] . '<br>';
+                    echo 'Balance:' . $user['balance'] . '<br>';
                     echo 'Email:' . $user['email'] . '<br>';
                     echo 'Phone Number:' . $user['phone_number'] . '<br>';
                     echo 'Address:' . $user['full_address'] . '<br>';
-                    
+
                     //echo "Earned : 50,000 Taka <br>";
                     //echo 'Event Completed: 1 <br>';
                     //echo 'Rating: 0 <br>';
                     echo '<a href="edit-user.php?username=' . $user['username'] . '">Edit</a> ';
-                    echo '<a href="">Delete</a>';
+                    echo '<td><a onclick="return confirm(\'Are you sure you want to delete this user?\');" href="?username=' . $user['username'] . '&delete=yes&type=' . $user['type'] . '">Delete</a></td>';
                     echo '</div>';
                 }
             }
             ?>
         </div>
-        
+
     </div>
 </body>
 
