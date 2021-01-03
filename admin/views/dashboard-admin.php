@@ -1,8 +1,13 @@
 <?php
 
 require_once "session-code.php";
+require_once "../controller/BusinessController.php";
 
+require_once "../controller/UserController.php";
+require_once "../controller/PlannerController.php";
 
+$firstDayThisMonth = date("Y-n-j", strtotime("first day of this month"));
+$lastDayThisMonth = date("Y-n-j", strtotime("last day of this month"));
 ?>
 
 <html>
@@ -81,28 +86,36 @@ require_once "session-code.php";
     <div class="all-section">
         <h2>System Summery </h2>
         <div class="this-month-profit-summery">
-            <h3>November, 2020 Profit [Upto]</h3>
-            <h2>300,000 Taka</h2>
+
+            <?php
+            $thismonth = totalPaidAmount($firstDayThisMonth, $lastDayThisMonth);
+            if (count($thismonth) == 0 or strtolower($thismonth[0]['total']) == "") {
+                echo "<h2 style='color:red;'>No Paid Event Purchased This Month Yet.</h2>";
+            } else {
+                echo "<h2>This Month Total Payment" . $thismonth[0]['total'] . "</h2>";
+                echo "<h3>Profit [10%]" . $thismonth[0]['total'] * 0.1 . " Taka</h3>";
+            }
+            ?>
+            <a href="business-stats.php" class="details">Check Full Business Data</a>
 
         </div>
 
         <div class="new-registered-users">
             <h3>New Registered</h3>
             <ul>
-                <li>
-                    <a href="">Planner Username</a>
-                </li>
-                <li>
-                    <a href="">Client Username</a>
-                </li>
-                <li>
-                    <a href="">Client Username</a>
-                </li>
+                <?php
+                $newUser = getAllTypeNewUser();
+                foreach ($newUser as $user) {
+                    echo "<li>";
+                    echo '<a href="user-details.php?username=' . $user['username'] . '">' . $user['username'] .'['.$user['type'] . ']</a> <br>';
+                    echo "</li>";
+                }
+                ?>
             </ul>
             <a href="new-registered.php" class="details">Check Full List</a>
         </div>
 
-        <div class="list-of-client">
+        <!-- <div class="list-of-client">
             <h3>Top Client [Based on Purchase]</h3>
             <ol>
                 <li>
@@ -116,9 +129,9 @@ require_once "session-code.php";
                 </li>
             </ol>
             <a href="client-users-list.php" class="details">Check Full List</a>
-        </div>
+        </div> -->
 
-        <div class="list-of-planners">
+        <!-- <div class="list-of-planners">
             <h3>Top Planners [Based on Earnings and Ratings]</h3>
             <ol>
                 <li>
@@ -132,13 +145,13 @@ require_once "session-code.php";
                 </li>
             </ol>
             <a href="event-planners-list.php" class="details">Check Full List</a>
-        </div>
+        </div> -->
 
-        <div class="stats">
+        <!-- <div class="stats">
             <h3>Today Total Plan Purchased And Amount</h3>
             <blockquote> Total 10 Plans, Amount = 250,000 Taka</blockquote>
             <a href="business-stats.php" class="details">Check Full List</a>
-        </div>
+        </div> -->
     </div>
 
 </body>

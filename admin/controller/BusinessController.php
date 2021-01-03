@@ -68,3 +68,10 @@ function getPurchaseDetailsByDate2($startDate, $endDate)
     $data = getColumsValue($sql);
     return $data;
 }
+
+function totalPaidAmount($startDate, $endDate)
+{
+    $sql = "SELECT SUM(service_price) total  FROM `purchased_services_details` WHERE `purchased_date` BETWEEN '$startDate' and '$endDate' and `status(paid/unpaid)` = 'paid';";
+    $data = getColumsValue($sql);
+    return $data;
+}

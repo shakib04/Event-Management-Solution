@@ -67,3 +67,10 @@ function deleteUser($username)
     $result = execute($sql);
     return $result;
 }
+
+ function getAllTypeNewUser()
+{
+    $sql = "SELECT * FROM `all_registered_users` ORDER BY `registration_date` DESC LIMIT 0,3";
+    $result = execute($sql);
+    return $result;
+}
