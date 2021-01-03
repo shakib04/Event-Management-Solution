@@ -27,7 +27,7 @@
               <a href="our_clients.php">Our clients </a>
               <a href="services_we_provide.php">services we provide </a>
               <a href="myprofile.php">My Profile</a>
-              <a href="plannerprofile.php">Planners Profile List</a>
+            
 
 
           </div>

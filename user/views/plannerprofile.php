@@ -93,8 +93,10 @@ if ($type == "planner") {
         foreach ($data as $service) {
             echo "<div style='border: 5px solid black; padding: 20px; width: 500px; margin: 10px; line-height: 1.7;'>";
             echo "Service Name: " . $service['service_name'] . "<br>";
+            echo "Service Id: " . $service['service_id'] . "<br>";
             echo "Category: " . $service['cat_name'] . "<br>";
             echo "Price: " . $service['price'] . "<br>";
+            echo  '<a href="book_event.php?username='.$_GET['username'].'&service_id='. $service['service_id'] .'.php">Order</a>';
             echo "</div>";
         }
     }
