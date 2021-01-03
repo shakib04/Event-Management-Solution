@@ -41,6 +41,10 @@ require_once "php-codes/session-code.php";
             color: red;
             font-weight: 600;
         }
+
+        body {
+            /* background-image: linear-gradient(to left bottom, #dfe6e9, #dff9fb); */
+        }
     </style>
 </head>
 
@@ -58,35 +62,12 @@ require_once "php-codes/session-code.php";
             <img src="event-demo-images/corporate-2.jpg" alt=""> -->
         </div>
     </div>
-    <div class="our-users-reviews">
-        <h3>Some Users Reviews about ourself</h3>
-        <ul>
-            <li>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum eaque dicta voluptate a voluptatem
-                    mollitia nobis. Unde quos id, iusto tempore qui aut quo rem distinctio facere autem reprehenderit
-                    excepturi culpa cum! Deserunt distinctio dolore ut ducimus illum quae in assumenda aut? Dolor
-                    consectetur porro voluptas, dolores officia tempore quam!
 
-                    <blockquote>-SSSSS</blockquote>
-                </p>
-            </li>
-
-            <li>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et explicabo quia in repudiandae. Ratione
-                    tenetur, ullam, porro temporibus dolores sit id corporis illo cumque possimus aliquid qui sunt nobis
-                    quia repellendus perspiciatis obcaecati voluptas dolorem aperiam deleniti magni architecto? Odit
-                    laboriosam aperiam reiciendis adipisci voluptatibus ipsum autem quae. Porro, nihil!
-                    <blockquote>-RRRR</blockquote>
-                </p>
-            </li>
-        </ul>
-    </div>
 
     <div id="login">
         <?php require_once "php-codes/login-validation.php" ?>
         <form action="" method="post" onsubmit="return loginValidation()">
-            <div class="login-box">Login</div>
+            <h2 class="login-box">Login</h2>
             <table>
                 <tr>
                     <td>Username</td>
@@ -138,9 +119,6 @@ require_once "php-codes/session-code.php";
             xhr.open("GET", "registration.php", true);
             xhr.send();
         }
-
-
-        
     </script>
 </body>
 
