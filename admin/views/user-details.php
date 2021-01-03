@@ -16,21 +16,34 @@ if (count($userData) == 0) {
     die();
 }
 
+
+?>
+
+<style>
+    table,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    td,
+    th {
+        padding: 15px;
+    }
+</style>
+<?php
+
+?>
+<?php
+require_once "nav-bar.php";
+
 $type = $userData[0]['type'];
 if ($type == "user") {
-    echo '<p>Back To User List <a href="client-users-list.php">User List</a></p>';
-}elseif ($type == "planner") {
+    echo '<p>Back To <a href="client-users-list.php">User List</a></p>';
+} elseif ($type == "planner") {
     echo '<p>Back To  <a href="event-planners-list.php">Planner List</a></p>';
 }
 echo "<h3>" . $_GET['username'] . "[$type] Details..</h3>";
-?>
-
-
-<?php
-
-?>
-<?php
-//require_once "nav-bar.php";
 ?>
 <div>
     <table>
@@ -66,6 +79,9 @@ echo "<h3>" . $_GET['username'] . "[$type] Details..</h3>";
             <td>Approved </td>
             <td><?php echo $userData[0]['approved']; ?></td>
         </tr>
+        <tr>
+        </tr>
+
     </table>
 </div>
 
