@@ -21,7 +21,6 @@
 
           <div class="navigation grid-item">
               <a href="user.php">Home</a>
-              <a href="book_event.php">Book an Event</a>
               <a href="Event.php">Event set design </a>
               <a href="myorder.php">Order </a>
               <a href="our_clients.php">Our clients </a>
