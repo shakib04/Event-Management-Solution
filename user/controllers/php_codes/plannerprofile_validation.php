@@ -87,7 +87,6 @@
      function plannerServices($username)
 {
     $sql = "SELECT * FROM planner_services_list psl, event_categories ec WHERE psl.e_category = ec.id and username = '". $username ."'";
-    //SELECT * FROM planner_services_list psl, event_categories ec WHERE psl.e_category = ec.id and username = 'joy004';
     $data = getColumsValue($sql);
     return $data;
 }

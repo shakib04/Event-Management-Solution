@@ -10,7 +10,17 @@ require_once "session-code.php";
     
     <title>USER</title>
     <link rel="stylesheet" type="text/css" href="css/mystyles.css">
-    
+    <style>
+    .search-planner {
+        width: 70%;
+        padding: 5px;
+    }
+
+    .search-button {
+        padding: 5px;
+        cursor: pointer;
+    }
+</style>
 </head>
 
 <body>
@@ -18,6 +28,7 @@ require_once "session-code.php";
     <form action="" method="post">
         <input type="submit" value="Log Out,<?php echo $_SESSION['username']; ?>" class="log-out-button" name="logout">
     </form>
+     
     <div class="layout grid-cont">
         
         <div class="navigation grid-item">
@@ -29,9 +40,14 @@ require_once "session-code.php";
             <a href="services_we_provide.php">services we provide </a>
             <a href="myprofile.php">My Profile</a>
 			<a href="plannerprofile.php">Planners Profile List</a>
-			
+		
         </div>
-        
+       	<form action="">
+        <input type="text" placeholder="What are you looking for?" onkeyup="searchPlanner(this)" class="search-planner">
+       <input type="submit" value="Search" class="search-button">
+       </form> <br>
+       <div id="search"></div>
+      <script src="../model/search.js"></script>
 		
 	  <div>
 	  <p style="font-size: 20px; color: black; font-weight: bold;"> planner-services:</p>
