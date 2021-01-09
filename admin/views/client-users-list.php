@@ -87,7 +87,6 @@ if (isset($_GET['username']) && isset($_GET['delete']) && isset($_GET['type'])) 
         <br> <br>
 
         <script>
-            
             var userInfo = '{"type":"user"}';
             var userObj = JSON.parse(userInfo);
         </script>
@@ -95,7 +94,7 @@ if (isset($_GET['username']) && isset($_GET['delete']) && isset($_GET['type'])) 
         <script src="js/live-search.js"></script>
 
 
-        <h2>All Clients [Order by]</h2>
+        <h2>All Clients</h2>
         <div id="result">
             <?php
             if (count($users) > 0) {
