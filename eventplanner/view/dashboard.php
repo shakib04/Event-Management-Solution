@@ -1,7 +1,6 @@
 <?php
-session_start();
 
+//nav bar
+include_once("nav-bar.php");
 ?>
-<h1>
-	Welcome <?php echo $_COOKIE["username"]; ?>
-</h1>
+
