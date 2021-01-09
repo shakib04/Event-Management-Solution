@@ -31,7 +31,7 @@ if (isset($_POST['save_plan'])) {
 
 function getPlanById($id)
 {
-    $sql = "SELECT * FROM `planner_services_list` where service_id = '$id'";
+    $sql = "SELECT * FROM `planner_services_list` psl, event_categories ec WHERE psl.e_category = ec.id and service_id = '$id'";
     $data = getColumsValue($sql);
     return $data;
 }
