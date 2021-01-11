@@ -11,7 +11,7 @@ if (!isset($_GET['serviceId'])) {
     }
 }
 
-echo $myJson = json_encode($planDetails[0]);
+$myJson = json_encode($planDetails[0]);
 require_once "new-plan.php";
 ?>
 
@@ -30,7 +30,7 @@ require_once "new-plan.php";
 
     var totalCategories = document.querySelectorAll("#cat_id option").length;
     for (let index = 0; index < totalCategories; index++) {
-        let optValue = document.querySelectorAll("#cat_id option")[index];
+        let optValue = document.querySelectorAll("#cat_id option")[index].value;
         if (optValue == allValues.e_category) {
             document.querySelectorAll("#cat_id option")[index].selected = true;
         }

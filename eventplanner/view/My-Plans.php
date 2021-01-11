@@ -13,10 +13,24 @@ $data = getMyPlanList($_SESSION['username']);
         padding: 15px;
     }
 
+    .btn {
+        padding: 5px;
+        margin: 5px;
+    }
+
     .edit-btn {
         background-color: #34495e;
         color: white;
-        padding: 5px;
+    }
+
+    .green-btn {
+        background-color: #00b894;
+        color: white;
+    }
+
+    .red-btn {
+        background-color: #d63031;
+        color: white;
     }
 </style>
 
@@ -40,6 +54,8 @@ include_once "nav-bar.php";
             echo "<p>Price: " . $plan['price'] . "</p>";
             echo "<p>Rating: " . $plan['overall_rating'] . "</p>";
             echo '<a class="btn edit-btn" href="edit-my-plan.php?serviceId=' . $plan['service_id'] . '">Edit</a>';
+            echo '<a class="btn green-btn" href="">Publish</a>';
+            echo '<a class="btn red-btn" href="">Delete</a>';
             echo "</div>";
         }
     }
