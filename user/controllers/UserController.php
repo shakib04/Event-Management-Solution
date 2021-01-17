@@ -20,5 +20,12 @@ function getAllServices()
 {
 
 }
-//$sql5="INSERT INTO `purchased_services_details` (`purchased_id`, `client_username`, `planner_username`, `service_id`, `status(paid/unpaid)`, `service_price`, `planner_approve`, `service_rating`, `planner_comment`) VALUES (NULL,'".$_SESSION['username']."','".$_GET['username']."' , '".$GET['service_id']."', 'paid', '4000', 'yes', '0', 'bad')";
+
+function suggestedServices()
+{
+    $sql = "SELECT * FROM `planner_services_list` WHERE 1;";
+    $data = getColumsValue($sql);
+    return $data;
+}
+//
 ?>

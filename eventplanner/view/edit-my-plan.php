@@ -1,4 +1,6 @@
 <?php
+require_once "session.php";
+
 require_once "../controller/PlanController.php";
 if (!isset($_GET['serviceId'])) {
     echo "<h1>Plan is Not Found!</h1>";

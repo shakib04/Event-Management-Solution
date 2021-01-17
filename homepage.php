@@ -72,7 +72,7 @@ require_once "php-codes/session-code.php";
                 <tr>
                     <td>Username</td>
                     <td>
-                        <input type="text" name="username" id="lg_username"><?php echo $err_login_username; ?>
+                        <input type="text" name="username" value="rabbi" id="lg_username"><?php echo $err_login_username; ?>
                         <span id="err_lg_username"></span>
                     </td>
                 </tr>
@@ -80,7 +80,7 @@ require_once "php-codes/session-code.php";
                 <tr>
                     <td>Password: </td>
                     <td>
-                        <input type="text" name="password" id="lg_password"> <?php echo $err_login_password; ?>
+                        <input type="text" name="password" value="1" id="lg_password"> <?php echo $err_login_password; ?>
                         <span id="err_lg_password"></span>
                     </td>
                 </tr>
