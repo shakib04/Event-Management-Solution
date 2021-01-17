@@ -38,11 +38,17 @@
           body {
               text-align: center;
           }
+
+          .my_order{
+              border: 1px solid darkblue;
+              margin: 5px;
+              line-height: 1.5;
+          }
       </style>
 
   </head>
 
-  <body style="text-align:center;">
+  <body>
       <?php include "mypagehead.php"; ?>
 
       <div>
@@ -90,10 +96,31 @@
                   <td colspan="2"><a href="myedit_profile.php">Edit Profile</a></td>
               </tr>
 
-
-
           </table>
 
+          <div id="my-order">
+              <h1>My Order List</h1>
+              <?php
+                require_once "../controllers/OrderController.php";
+                $myOder = getMyOder();
+                if (count($myOder) == 0) {
+                    echo "<h1>No Order Found</h1>";
+                } else {
+                    foreach ($myOder as $order) {
+                        echo "<div class='my_order'>";
+                        echo "Service Name: " . $order['service_name'] . "<br>";
+                        echo "Service Provider: " . $order['planner_username'] . "<br>";
+                        echo "Status: " . $order['status(paid/unpaid)'] . "<br>";
+                        echo "Price: " . $order['service_price'] . "<br>";
+                        echo "Approve: " . $order['planner_approve'] . "<br>";
+
+                        echo "Order Date: " . $order['purchased_date'] . "<br>";
+                        echo "Your Comment: " . $order['planner_comment'] . "<br>";
+                        echo "</div>";
+                    }
+                }
+                ?>
+          </div>
 
 
           <script src="../scripts/profilevalidation.js"></script>

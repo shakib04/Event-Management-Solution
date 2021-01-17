@@ -27,5 +27,5 @@ function suggestedServices()
     $data = getColumsValue($sql);
     return $data;
 }
-//
+
 ?>
