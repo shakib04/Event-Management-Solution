@@ -86,7 +86,7 @@ require_once "php-codes/session-code.php";
                 </tr>
 
                 <tr>
-                    <td><input type="reset" name="" id=""></td>
+                    <td><input type="reset" value="Clear" name="" id=""></td>
                     <td><input type="submit" id="" name="login" value="Login"></td>
                 </tr>
             </table>
